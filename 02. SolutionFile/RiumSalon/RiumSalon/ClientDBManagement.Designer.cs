@@ -46,7 +46,14 @@ namespace RiumSalon
             this.btnSaveProfile = new System.Windows.Forms.Button();
             this.btnCancelProfile = new System.Windows.Forms.Button();
             this.btnDeleteProfile = new System.Windows.Forms.Button();
-            this.grpboxEditVisitHistoryManually = new System.Windows.Forms.GroupBox();
+            this.grpboxEditVisitRecordManually = new System.Windows.Forms.GroupBox();
+            this.lblMessageVisitRecord = new System.Windows.Forms.Label();
+            this.cmbboxStatus = new System.Windows.Forms.ComboBox();
+            this.lblVisitRecordClientName = new System.Windows.Forms.Label();
+            this.txtVisitRecordClientName = new System.Windows.Forms.TextBox();
+            this.lblVisitRecordClientId = new System.Windows.Forms.Label();
+            this.txtVisitRecordClientId = new System.Windows.Forms.TextBox();
+            this.cmbboxWorker = new System.Windows.Forms.ComboBox();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.cmbboxMethod = new System.Windows.Forms.ComboBox();
             this.lblMethod = new System.Windows.Forms.Label();
@@ -70,30 +77,28 @@ namespace RiumSalon
             this.dtDate = new System.Windows.Forms.DateTimePicker();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblEnd = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.lblStart = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblWorker = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.txtWorker = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblService = new System.Windows.Forms.Label();
             this.txtService = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.lblHistoryId = new System.Windows.Forms.Label();
-            this.txtVisitHistoryId = new System.Windows.Forms.TextBox();
+            this.lblRecordId = new System.Windows.Forms.Label();
+            this.txtRecordId = new System.Windows.Forms.TextBox();
             this.grpboxClientProfile = new System.Windows.Forms.GroupBox();
-            this.grpboxNav = new System.Windows.Forms.GroupBox();
-            this.grpboxViewVisitHistory = new System.Windows.Forms.GroupBox();
-            this.rtxtViewVisitHistory = new System.Windows.Forms.RichTextBox();
-            this.lblCopyright = new System.Windows.Forms.LinkLabel();
-            this.lblMessage = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
+            this.grpboxNav = new System.Windows.Forms.GroupBox();
+            this.grpboxViewVisitRecord = new System.Windows.Forms.GroupBox();
+            this.gridViewVisitRecord = new System.Windows.Forms.DataGridView();
+            this.lblCopyright = new System.Windows.Forms.LinkLabel();
+            this.lblMessageProfile = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).BeginInit();
-            this.grpboxEditVisitHistoryManually.SuspendLayout();
+            this.grpboxEditVisitRecordManually.SuspendLayout();
             this.grpboxClientProfile.SuspendLayout();
             this.grpboxNav.SuspendLayout();
-            this.grpboxViewVisitHistory.SuspendLayout();
+            this.grpboxViewVisitRecord.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewVisitRecord)).BeginInit();
             this.SuspendLayout();
             // 
             // lstboxNav
@@ -254,50 +259,121 @@ namespace RiumSalon
             this.btnDeleteProfile.UseVisualStyleBackColor = true;
             this.btnDeleteProfile.Click += new System.EventHandler(this.btnDeleteProfile_Click);
             // 
-            // grpboxEditVisitHistoryManually
+            // grpboxEditVisitRecordManually
             // 
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.btnCalculate);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.cmbboxMethod);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblMethod);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblTotal);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.txtTotal);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblTips);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.txtTips);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblQST);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.txtQST);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblGST);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.txtGST);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.btnDeleteVisitHistory);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblSpecialRequest2);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.btnCancelVisitHistory);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.rtxtSpecialRequest);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.btnSaveVisitHistory);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblSpecialRequest1);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.btnClearVisitHistory);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.dtEnd);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.dtStart);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.dtDate);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblStatus);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblEnd);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.txtStatus);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblStart);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblDate);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblWorker);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblPrice);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.txtWorker);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.txtPrice);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblService);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.txtService);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.btnSearch);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.lblHistoryId);
-            this.grpboxEditVisitHistoryManually.Controls.Add(this.txtVisitHistoryId);
-            this.grpboxEditVisitHistoryManually.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpboxEditVisitHistoryManually.Location = new System.Drawing.Point(12, 582);
-            this.grpboxEditVisitHistoryManually.Name = "grpboxEditVisitHistoryManually";
-            this.grpboxEditVisitHistoryManually.Size = new System.Drawing.Size(680, 328);
-            this.grpboxEditVisitHistoryManually.TabIndex = 22;
-            this.grpboxEditVisitHistoryManually.TabStop = false;
-            this.grpboxEditVisitHistoryManually.Text = "Edit Visit History Manually";
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblMessageVisitRecord);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.cmbboxStatus);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblVisitRecordClientName);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.txtVisitRecordClientName);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblVisitRecordClientId);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.txtVisitRecordClientId);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.cmbboxWorker);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.btnCalculate);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.cmbboxMethod);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblMethod);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblTotal);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.txtTotal);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblTips);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.txtTips);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblQST);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.txtQST);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblGST);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.txtGST);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.btnDeleteVisitHistory);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblSpecialRequest2);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.btnCancelVisitHistory);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.rtxtSpecialRequest);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.btnSaveVisitHistory);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblSpecialRequest1);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.btnClearVisitHistory);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.dtEnd);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.dtStart);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.dtDate);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblStatus);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblEnd);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblStart);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblDate);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblWorker);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblPrice);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.txtPrice);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblService);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.txtService);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.lblRecordId);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.txtRecordId);
+            this.grpboxEditVisitRecordManually.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpboxEditVisitRecordManually.Location = new System.Drawing.Point(12, 582);
+            this.grpboxEditVisitRecordManually.Name = "grpboxEditVisitRecordManually";
+            this.grpboxEditVisitRecordManually.Size = new System.Drawing.Size(680, 355);
+            this.grpboxEditVisitRecordManually.TabIndex = 22;
+            this.grpboxEditVisitRecordManually.TabStop = false;
+            this.grpboxEditVisitRecordManually.Text = "Edit Visit Record Manually";
+            // 
+            // lblMessageVisitRecord
+            // 
+            this.lblMessageVisitRecord.AutoSize = true;
+            this.lblMessageVisitRecord.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.lblMessageVisitRecord.ForeColor = System.Drawing.Color.Red;
+            this.lblMessageVisitRecord.Location = new System.Drawing.Point(6, 319);
+            this.lblMessageVisitRecord.Name = "lblMessageVisitRecord";
+            this.lblMessageVisitRecord.Size = new System.Drawing.Size(0, 20);
+            this.lblMessageVisitRecord.TabIndex = 80;
+            // 
+            // cmbboxStatus
+            // 
+            this.cmbboxStatus.FormattingEnabled = true;
+            this.cmbboxStatus.Items.AddRange(new object[] {
+            "pending",
+            "confirmed",
+            "canceled"});
+            this.cmbboxStatus.Location = new System.Drawing.Point(572, 152);
+            this.cmbboxStatus.Name = "cmbboxStatus";
+            this.cmbboxStatus.Size = new System.Drawing.Size(91, 28);
+            this.cmbboxStatus.TabIndex = 79;
+            // 
+            // lblVisitRecordClientName
+            // 
+            this.lblVisitRecordClientName.AutoSize = true;
+            this.lblVisitRecordClientName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisitRecordClientName.Location = new System.Drawing.Point(343, 32);
+            this.lblVisitRecordClientName.Name = "lblVisitRecordClientName";
+            this.lblVisitRecordClientName.Size = new System.Drawing.Size(43, 20);
+            this.lblVisitRecordClientName.TabIndex = 77;
+            this.lblVisitRecordClientName.Text = "Name";
+            // 
+            // txtVisitRecordClientName
+            // 
+            this.txtVisitRecordClientName.Location = new System.Drawing.Point(396, 30);
+            this.txtVisitRecordClientName.Name = "txtVisitRecordClientName";
+            this.txtVisitRecordClientName.Size = new System.Drawing.Size(267, 25);
+            this.txtVisitRecordClientName.TabIndex = 78;
+            // 
+            // lblVisitRecordClientId
+            // 
+            this.lblVisitRecordClientId.AutoSize = true;
+            this.lblVisitRecordClientId.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisitRecordClientId.Location = new System.Drawing.Point(188, 32);
+            this.lblVisitRecordClientId.Name = "lblVisitRecordClientId";
+            this.lblVisitRecordClientId.Size = new System.Drawing.Size(56, 20);
+            this.lblVisitRecordClientId.TabIndex = 75;
+            this.lblVisitRecordClientId.Text = "Client ID";
+            // 
+            // txtVisitRecordClientId
+            // 
+            this.txtVisitRecordClientId.Location = new System.Drawing.Point(252, 30);
+            this.txtVisitRecordClientId.Name = "txtVisitRecordClientId";
+            this.txtVisitRecordClientId.Size = new System.Drawing.Size(85, 25);
+            this.txtVisitRecordClientId.TabIndex = 76;
+            // 
+            // cmbboxWorker
+            // 
+            this.cmbboxWorker.FormattingEnabled = true;
+            this.cmbboxWorker.Items.AddRange(new object[] {
+            "Daniel",
+            "Marie"});
+            this.cmbboxWorker.Location = new System.Drawing.Point(396, 59);
+            this.cmbboxWorker.Name = "cmbboxWorker";
+            this.cmbboxWorker.Size = new System.Drawing.Size(72, 28);
+            this.cmbboxWorker.TabIndex = 74;
             // 
             // btnCalculate
             // 
@@ -308,6 +384,7 @@ namespace RiumSalon
             this.btnCalculate.TabIndex = 73;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // cmbboxMethod
             // 
@@ -413,6 +490,7 @@ namespace RiumSalon
             this.btnDeleteVisitHistory.TabIndex = 25;
             this.btnDeleteVisitHistory.Text = "Delete";
             this.btnDeleteVisitHistory.UseVisualStyleBackColor = true;
+            this.btnDeleteVisitHistory.Click += new System.EventHandler(this.btnDeleteVisitHistory_Click);
             // 
             // lblSpecialRequest2
             // 
@@ -433,6 +511,7 @@ namespace RiumSalon
             this.btnCancelVisitHistory.TabIndex = 24;
             this.btnCancelVisitHistory.Text = "Cancel";
             this.btnCancelVisitHistory.UseVisualStyleBackColor = true;
+            this.btnCancelVisitHistory.Click += new System.EventHandler(this.btnCancelVisitHistory_Click);
             // 
             // rtxtSpecialRequest
             // 
@@ -451,6 +530,7 @@ namespace RiumSalon
             this.btnSaveVisitHistory.TabIndex = 23;
             this.btnSaveVisitHistory.Text = "Save";
             this.btnSaveVisitHistory.UseVisualStyleBackColor = true;
+            this.btnSaveVisitHistory.Click += new System.EventHandler(this.btnSaveVisitHistory_Click);
             // 
             // lblSpecialRequest1
             // 
@@ -471,6 +551,7 @@ namespace RiumSalon
             this.btnClearVisitHistory.TabIndex = 22;
             this.btnClearVisitHistory.Text = "Clear";
             this.btnClearVisitHistory.UseVisualStyleBackColor = true;
+            this.btnClearVisitHistory.Click += new System.EventHandler(this.btnClearVisitHistory_Click);
             // 
             // dtEnd
             // 
@@ -521,13 +602,6 @@ namespace RiumSalon
             this.lblEnd.TabIndex = 36;
             this.lblEnd.Text = "End";
             // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(563, 154);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(100, 25);
-            this.txtStatus.TabIndex = 39;
-            // 
             // lblStart
             // 
             this.lblStart.AutoSize = true;
@@ -552,7 +626,7 @@ namespace RiumSalon
             // 
             this.lblWorker.AutoSize = true;
             this.lblWorker.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWorker.Location = new System.Drawing.Point(331, 63);
+            this.lblWorker.Location = new System.Drawing.Point(343, 63);
             this.lblWorker.Name = "lblWorker";
             this.lblWorker.Size = new System.Drawing.Size(48, 20);
             this.lblWorker.TabIndex = 30;
@@ -567,13 +641,6 @@ namespace RiumSalon
             this.lblPrice.Size = new System.Drawing.Size(38, 20);
             this.lblPrice.TabIndex = 28;
             this.lblPrice.Text = "Price";
-            // 
-            // txtWorker
-            // 
-            this.txtWorker.Location = new System.Drawing.Point(388, 61);
-            this.txtWorker.Name = "txtWorker";
-            this.txtWorker.Size = new System.Drawing.Size(80, 25);
-            this.txtWorker.TabIndex = 31;
             // 
             // txtPrice
             // 
@@ -596,35 +663,26 @@ namespace RiumSalon
             // 
             this.txtService.Location = new System.Drawing.Point(73, 61);
             this.txtService.Name = "txtService";
-            this.txtService.Size = new System.Drawing.Size(252, 25);
+            this.txtService.Size = new System.Drawing.Size(264, 25);
             this.txtService.TabIndex = 27;
             // 
-            // btnSearch
+            // lblRecordId
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(179, 28);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(64, 30);
-            this.btnSearch.TabIndex = 22;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.lblRecordId.AutoSize = true;
+            this.lblRecordId.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecordId.Location = new System.Drawing.Point(6, 32);
+            this.lblRecordId.Name = "lblRecordId";
+            this.lblRecordId.Size = new System.Drawing.Size(65, 20);
+            this.lblRecordId.TabIndex = 22;
+            this.lblRecordId.Text = "Record ID";
             // 
-            // lblHistoryId
+            // txtRecordId
             // 
-            this.lblHistoryId.AutoSize = true;
-            this.lblHistoryId.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistoryId.Location = new System.Drawing.Point(6, 32);
-            this.lblHistoryId.Name = "lblHistoryId";
-            this.lblHistoryId.Size = new System.Drawing.Size(61, 20);
-            this.lblHistoryId.TabIndex = 22;
-            this.lblHistoryId.Text = "History ID";
-            // 
-            // txtVisitHistoryId
-            // 
-            this.txtVisitHistoryId.Location = new System.Drawing.Point(73, 30);
-            this.txtVisitHistoryId.Name = "txtVisitHistoryId";
-            this.txtVisitHistoryId.Size = new System.Drawing.Size(100, 25);
-            this.txtVisitHistoryId.TabIndex = 23;
+            this.txtRecordId.Enabled = false;
+            this.txtRecordId.Location = new System.Drawing.Point(73, 30);
+            this.txtRecordId.Name = "txtRecordId";
+            this.txtRecordId.Size = new System.Drawing.Size(100, 25);
+            this.txtRecordId.TabIndex = 23;
             // 
             // grpboxClientProfile
             // 
@@ -651,6 +709,15 @@ namespace RiumSalon
             this.grpboxClientProfile.TabStop = false;
             this.grpboxClientProfile.Text = "Client Profile";
             // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(65, 87);
+            this.txtPhone.Mask = "(999) 000-0000";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(240, 25);
+            this.txtPhone.TabIndex = 22;
+            this.txtPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
             // grpboxNav
             // 
             this.grpboxNav.Controls.Add(this.lstboxNav);
@@ -662,29 +729,35 @@ namespace RiumSalon
             this.grpboxNav.TabStop = false;
             this.grpboxNav.Text = "Client List";
             // 
-            // grpboxViewVisitHistory
+            // grpboxViewVisitRecord
             // 
-            this.grpboxViewVisitHistory.Controls.Add(this.rtxtViewVisitHistory);
-            this.grpboxViewVisitHistory.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpboxViewVisitHistory.Location = new System.Drawing.Point(12, 357);
-            this.grpboxViewVisitHistory.Name = "grpboxViewVisitHistory";
-            this.grpboxViewVisitHistory.Size = new System.Drawing.Size(680, 219);
-            this.grpboxViewVisitHistory.TabIndex = 62;
-            this.grpboxViewVisitHistory.TabStop = false;
-            this.grpboxViewVisitHistory.Text = "View Visit History";
+            this.grpboxViewVisitRecord.Controls.Add(this.gridViewVisitRecord);
+            this.grpboxViewVisitRecord.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpboxViewVisitRecord.Location = new System.Drawing.Point(12, 357);
+            this.grpboxViewVisitRecord.Name = "grpboxViewVisitRecord";
+            this.grpboxViewVisitRecord.Size = new System.Drawing.Size(680, 219);
+            this.grpboxViewVisitRecord.TabIndex = 62;
+            this.grpboxViewVisitRecord.TabStop = false;
+            this.grpboxViewVisitRecord.Text = "View Visit Record";
             // 
-            // rtxtViewVisitHistory
+            // gridViewVisitRecord
             // 
-            this.rtxtViewVisitHistory.Location = new System.Drawing.Point(6, 24);
-            this.rtxtViewVisitHistory.Name = "rtxtViewVisitHistory";
-            this.rtxtViewVisitHistory.Size = new System.Drawing.Size(657, 182);
-            this.rtxtViewVisitHistory.TabIndex = 62;
-            this.rtxtViewVisitHistory.Text = "";
+            this.gridViewVisitRecord.AllowUserToAddRows = false;
+            this.gridViewVisitRecord.AllowUserToDeleteRows = false;
+            this.gridViewVisitRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridViewVisitRecord.Location = new System.Drawing.Point(11, 24);
+            this.gridViewVisitRecord.MultiSelect = false;
+            this.gridViewVisitRecord.Name = "gridViewVisitRecord";
+            this.gridViewVisitRecord.RowTemplate.Height = 23;
+            this.gridViewVisitRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridViewVisitRecord.Size = new System.Drawing.Size(652, 189);
+            this.gridViewVisitRecord.TabIndex = 0;
+            this.gridViewVisitRecord.SelectionChanged += new System.EventHandler(this.gridViewVisitRecord_SelectionChanged);
             // 
             // lblCopyright
             // 
             this.lblCopyright.AutoSize = true;
-            this.lblCopyright.Location = new System.Drawing.Point(256, 917);
+            this.lblCopyright.Location = new System.Drawing.Point(261, 950);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(183, 12);
             this.lblCopyright.TabIndex = 63;
@@ -693,47 +766,39 @@ namespace RiumSalon
             this.lblCopyright.VisitedLinkColor = System.Drawing.Color.Blue;
             this.lblCopyright.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCopyright_LinkClicked);
             // 
-            // lblMessage
+            // lblMessageProfile
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblMessage.Location = new System.Drawing.Point(479, 18);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 16);
-            this.lblMessage.TabIndex = 64;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(65, 87);
-            this.txtPhone.Mask = "(999) 000-0000";
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(240, 25);
-            this.txtPhone.TabIndex = 22;
-            this.txtPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.lblMessageProfile.AutoSize = true;
+            this.lblMessageProfile.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.lblMessageProfile.ForeColor = System.Drawing.Color.Red;
+            this.lblMessageProfile.Location = new System.Drawing.Point(470, 9);
+            this.lblMessageProfile.Name = "lblMessageProfile";
+            this.lblMessageProfile.Size = new System.Drawing.Size(0, 20);
+            this.lblMessageProfile.TabIndex = 64;
             // 
             // ClientDBManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 938);
-            this.Controls.Add(this.lblMessage);
+            this.ClientSize = new System.Drawing.Size(704, 971);
+            this.Controls.Add(this.lblMessageProfile);
             this.Controls.Add(this.lblCopyright);
-            this.Controls.Add(this.grpboxViewVisitHistory);
+            this.Controls.Add(this.grpboxViewVisitRecord);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.grpboxClientProfile);
             this.Controls.Add(this.grpboxNav);
-            this.Controls.Add(this.grpboxEditVisitHistoryManually);
+            this.Controls.Add(this.grpboxEditVisitRecordManually);
             this.Name = "ClientDBManagement";
             this.Text = "Rium Salon Coiffure - Client DB Management";
             this.Load += new System.EventHandler(this.ClientDBManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).EndInit();
-            this.grpboxEditVisitHistoryManually.ResumeLayout(false);
-            this.grpboxEditVisitHistoryManually.PerformLayout();
+            this.grpboxEditVisitRecordManually.ResumeLayout(false);
+            this.grpboxEditVisitRecordManually.PerformLayout();
             this.grpboxClientProfile.ResumeLayout(false);
             this.grpboxClientProfile.PerformLayout();
             this.grpboxNav.ResumeLayout(false);
-            this.grpboxViewVisitHistory.ResumeLayout(false);
+            this.grpboxViewVisitRecord.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewVisitRecord)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -757,22 +822,19 @@ namespace RiumSalon
         private System.Windows.Forms.Button btnSaveProfile;
         private System.Windows.Forms.Button btnCancelProfile;
         private System.Windows.Forms.Button btnDeleteProfile;
-        private System.Windows.Forms.GroupBox grpboxEditVisitHistoryManually;
+        private System.Windows.Forms.GroupBox grpboxEditVisitRecordManually;
         private System.Windows.Forms.GroupBox grpboxClientProfile;
         private System.Windows.Forms.GroupBox grpboxNav;
-        private System.Windows.Forms.Label lblHistoryId;
-        private System.Windows.Forms.TextBox txtVisitHistoryId;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblRecordId;
+        private System.Windows.Forms.TextBox txtRecordId;
         private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.TextBox txtService;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblWorker;
-        private System.Windows.Forms.TextBox txtWorker;
         private System.Windows.Forms.DateTimePicker dtDate;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblEnd;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label lblStart;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.DateTimePicker dtStart;
@@ -780,8 +842,7 @@ namespace RiumSalon
         private System.Windows.Forms.Label lblSpecialRequest2;
         private System.Windows.Forms.RichTextBox rtxtSpecialRequest;
         private System.Windows.Forms.Label lblSpecialRequest1;
-        private System.Windows.Forms.GroupBox grpboxViewVisitHistory;
-        private System.Windows.Forms.RichTextBox rtxtViewVisitHistory;
+        private System.Windows.Forms.GroupBox grpboxViewVisitRecord;
         private System.Windows.Forms.Button btnDeleteVisitHistory;
         private System.Windows.Forms.Button btnCancelVisitHistory;
         private System.Windows.Forms.Button btnSaveVisitHistory;
@@ -798,7 +859,15 @@ namespace RiumSalon
         private System.Windows.Forms.TextBox txtGST;
         private System.Windows.Forms.ComboBox cmbboxMethod;
         private System.Windows.Forms.Button btnCalculate;
-        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Label lblMessageProfile;
         private System.Windows.Forms.MaskedTextBox txtPhone;
+        private System.Windows.Forms.ComboBox cmbboxWorker;
+        private System.Windows.Forms.Label lblVisitRecordClientId;
+        private System.Windows.Forms.TextBox txtVisitRecordClientId;
+        private System.Windows.Forms.Label lblVisitRecordClientName;
+        private System.Windows.Forms.TextBox txtVisitRecordClientName;
+        private System.Windows.Forms.ComboBox cmbboxStatus;
+        private System.Windows.Forms.Label lblMessageVisitRecord;
+        private System.Windows.Forms.DataGridView gridViewVisitRecord;
     }
 }

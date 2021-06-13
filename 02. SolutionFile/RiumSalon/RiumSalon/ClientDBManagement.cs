@@ -29,34 +29,34 @@ namespace RiumSalon
         // ClientDBManagement_Load loads all client records on file
         private void ClientDBManagement_Load(object sender, EventArgs e)
         {
-            RebuildStockList();
+            RebuildClientList();
         }
 
-        // RebuildStockList displays the StockName and returns the StockId as the ListBox’s value.
-        // The Stock names are displayed in alphabetical order.
-        private void RebuildStockList(int clientId = 0)
+        // RebuildStockList displays the ClientName and returns the StockId as the ListBox’s value.
+        // The Client names are displayed in alphabetical order.
+        private void RebuildClientList(int clientId = 0)
         {
             List<JSClient> clients = JSClient.JSGetClients();
 
-            // The Stock names are displayed in alphabetical order.
+            // The Client names are displayed in alphabetical order.
             clients = clients.OrderBy(a => a.ClientName).ToList();
 
-            // it displays the StockName and returns the StockId as the ListBox’s value
+            // it displays the ClientName and returns the StockId as the ListBox’s value
             lstboxNav.DisplayMember = "ClientName";
             lstboxNav.ValueMember = "ClientId";
             lstboxNav.DataSource = clients;
 
-            // stockId type is integer => SelectedValue Type = integer
+            // clientId type is integer => SelectedValue Type = integer
             if (clientId != 0)
                 lstboxNav.SelectedValue = clientId;
         }
 
-        // lstStock_SelectedIndexChanged is for When the user selects a Stock, that Stock’s properties are loaded to the input areas.
+        // lstboxNav_SelectedIndexChanged is for When the user selects a Client, that Client’s properties are loaded to the input areas.
         private void lstboxNav_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblMessage.Text = "";
+            lblMessageProfile.Text = "";
 
-            // When the user selects a Stock, that Stock’s properties are loaded to the input areas.
+            // When the user selects a Client, that Client’s properties are loaded to the input areas.
             JSClient client = JSClient.JSGetByClientId(int.Parse(lstboxNav.SelectedValue.ToString()));
             if (client != null)
             {
@@ -67,11 +67,14 @@ namespace RiumSalon
                 rtxtNotes.Text = client.ClientNotes.ToString();
 
                 // When a record is selected in the ListBox, this should shout “this is an update!”.
-                lblMessage.Text += "This is an update.\n";
+                lblMessageProfile.Text += "This is an update.\n";
+
+                // Display Visit Hsitory
+                RebuildVisitRecordList(client.ClientId);
             }
             else
             {
-                lblMessage.Text = $"The StockId not found: {lstboxNav.SelectedValue}";
+                lblMessageProfile.Text = $"The StockId not found: {lstboxNav.SelectedValue}";
             }
         }
 
@@ -85,7 +88,7 @@ namespace RiumSalon
         // StockId should be set to zero for a new item.
         private void btnClearProfile_Click(object sender, EventArgs e)
         {
-            lblMessage.Text = "";
+            lblMessageProfile.Text = "";
 
             txtClientId.Text = "0";
             txtName.Text = "";
@@ -93,7 +96,7 @@ namespace RiumSalon
             txtEmail.Text = "";
             rtxtNotes.Text = "";
 
-            lblMessage.Text += "This is a new record.\n";
+            lblMessageProfile.Text += "This is a new record.\n";
         }
 
         // btnSaveProfile_Click creates a new JSClient object, loads it from the input areas
@@ -102,7 +105,7 @@ namespace RiumSalon
         // Error messages and Exceptions are displayed in a red label or a rich text box, one line per message.
         private void btnSaveProfile_Click(object sender, EventArgs e)
         {
-            lblMessage.Text = "";
+            lblMessageProfile.Text = "";
 
             JSClient client = new JSClient();
 
@@ -113,16 +116,293 @@ namespace RiumSalon
             }
             else
             {
-                lblMessage.Text += "ClientId should be a integer number.\n";
+                lblMessageProfile.Text += "ClientId should be a integer number.\n";
             }
 
             // Validation might be here....
             client.ClientName = txtName.Text;
             client.ClientPhone = txtPhone.Text;
             client.ClientEmail = txtEmail.Text;
-            client.ClientNotes = rtxtNotes.Text;            
+            client.ClientNotes = rtxtNotes.Text;
 
-            if (lblMessage.Text != "")
+            if (lblMessageProfile.Text != "")
+            {
+                return;
+            }
+
+            try
+            {
+                int index = lstboxNav.SelectedIndex;
+
+                // When the user successfully adds a new Stock or updates an existing Stock: 
+                // The ListBox needs to be reloaded and resorted, and the modified/new record selected.
+                if (client.ClientId == 0)
+                {
+                    client.JSAdd(client);
+                    RebuildClientList(client.ClientId);
+                    lblMessageProfile.Text = $"The record with Name '{client.ClientName}' is added.\n";
+                }
+                else
+                {
+                    client.JSUpdate(client);
+                    RebuildClientList(client.ClientId);
+                    lstboxNav.SelectedIndex = index;
+                    lblMessageProfile.Text = $"The record with Name '{client.ClientName}' is updated.\n";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageProfile.Text += ex.Message;
+            }
+        }
+
+        // btnCancel_Click returns the input areas to their values before the user cleared or modified them.
+        // What remembers the original StockId, whether it was an update or add that was cancelled?
+        private void btnCancelProfile_Click(object sender, EventArgs e)
+        {
+            lblMessageProfile.Text = "";
+            try
+            {
+                if (!(lstboxNav.SelectedIndex == -1))
+                {
+                    JSClient client = JSClient.JSGetByClientId(int.Parse(lstboxNav.SelectedValue.ToString()));
+                    RebuildClientList(client.ClientId);
+                    lblMessageProfile.Text = "Canceled.\n";
+                }
+                else
+                {
+                    lblMessageProfile.Text += "The list is empty.\n";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageProfile.Text += ex.Message;
+            }
+        }
+
+        // btnDelete_Click deletes the recrod with the given StockId from the file
+        private void btnDeleteProfile_Click(object sender, EventArgs e)
+        {
+            lblMessageProfile.Text = "";
+
+            try
+            {                
+                // When the user deletes an existing record:
+                // The ListBox needs to be reloaded, and have the record after
+                // the one deleted selected (or the last record, if the user deleted the prior last record).
+                if ((lstboxNav.SelectedIndex == -1) || txtClientId.Text == "0")
+                {
+                    lblMessageProfile.Text += "You should select a client to delete.\n";
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Do you want delete " + txtName.Text + "?", "Delete Confirmation", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        int index = lstboxNav.SelectedIndex;
+
+                        if (index + 1 == lstboxNav.Items.Count)
+                        {
+                            --index;
+                        }
+
+                        JSClient client = JSClient.JSGetByClientId(int.Parse(lstboxNav.SelectedValue.ToString()));
+                        client.JSDelete(txtClientId.Text);
+                        RebuildClientList();
+                        lstboxNav.SelectedIndex = index;
+                        lblMessageProfile.Text = $"The record with Client ID '{client.ClientId}' is deleted.\n";
+                    }                            
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageProfile.Text += ex.Message;
+            }
+        }
+
+
+
+        /* Manage Visit Record */
+        // RebuildVisitRecordList displays the ClientName and returns the RecordId as the ListBox’s value.
+        // The Client names are displayed in alphabetical order.
+        private void RebuildVisitRecordList(int clientId = 0)
+        {
+            List<JSVisitRecord> jSVisitRecordsByClientId = JSVisitRecord.JSGetVisitRecordsByClientId(clientId);
+
+            // The Client names are displayed in alphabetical order.
+            jSVisitRecordsByClientId = jSVisitRecordsByClientId.OrderBy(a => a.Date).ToList();
+
+            // it displays the ClientName and returns the RecordId as the ListBox’s value
+            gridViewVisitRecord.DataSource = jSVisitRecordsByClientId;
+
+            gridViewVisitRecord.AutoResizeColumns();
+            gridViewVisitRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        // lstboxVistRecord_SelectedIndexChanged is for When the user selects a Client, that Client’s properties are loaded to the input areas.
+        private void gridViewVisitRecord_SelectionChanged(object sender, EventArgs e)
+        {
+            lblMessageVisitRecord.Text = "";
+
+            try
+            {
+                // When the user selects a Visit Record, that Visit Record’s properties are loaded to the input areas.
+                JSVisitRecord jSVisitRecord =  new JSVisitRecord();
+                List<JSVisitRecord> jSVisitRecordByClientId = JSVisitRecord.JSGetVisitRecordsByClientId(int.Parse(txtClientId.Text));
+                if (jSVisitRecordByClientId.Count == 0)
+                {
+                    jSVisitRecord = JSVisitRecord.JSGetByRecordId();
+                }
+                else
+                {
+
+                }
+                
+
+                if (jSVisitRecord != null)
+                {
+                    txtRecordId.Text = jSVisitRecord.RecordId.ToString();
+                    txtVisitRecordClientId.Text = jSVisitRecord.ClientId.ToString();
+                    txtVisitRecordClientName.Text = jSVisitRecord.ClientName.ToString();
+                    txtService.Text = jSVisitRecord.Service.ToString();
+                    cmbboxWorker.SelectedItem = jSVisitRecord.Worker.ToString();
+                    txtPrice.Text = jSVisitRecord.Price.ToString();
+                    txtTips.Text = jSVisitRecord.Tips.ToString();
+                    cmbboxMethod.SelectedItem = jSVisitRecord.Method.ToString();
+                    txtGST.Text = jSVisitRecord.GST.ToString();
+                    txtQST.Text = jSVisitRecord.QST.ToString();
+                    txtTotal.Text = jSVisitRecord.Total.ToString();
+                    dtDate.Value = jSVisitRecord.Date;
+                    dtStart.Text = jSVisitRecord.Start;
+                    dtEnd.Text = jSVisitRecord.End;
+                    cmbboxStatus.SelectedItem = jSVisitRecord.Status.ToString();
+                    rtxtSpecialRequest.Text = jSVisitRecord.SpecialRequest.ToString();
+
+                    // When a record is selected in the ListBox, this should shout “this is an update!”.
+                    lblMessageVisitRecord.Text += "This is an update.\n";
+                }
+                else
+                {
+                    lblMessageVisitRecord.Text = $"The Visit Record is empty.\n";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageVisitRecord.Text += ex.Message;
+            }
+        }
+
+        // btnClearInputs_Click ready the input areas for a new record.
+        // It also signals “this is a new record”.
+        // RecordId should be set to zero for a new item.
+        private void btnClearVisitHistory_Click(object sender, EventArgs e)
+        {
+            lblMessageVisitRecord.Text = "";
+
+            txtRecordId.Text = "0";
+            txtVisitRecordClientId.Text = txtClientId.Text;
+            txtVisitRecordClientName.Text = txtName.Text;
+            txtService.Text = "";
+            txtPrice.Text = "";
+            txtTips.Text = "";
+            txtGST.Text = "";
+            txtQST.Text = "";
+            txtTotal.Text = "";
+
+            lblMessageVisitRecord.Text += "This is a new record.\n";
+        }
+
+        // btnSaveProfile_Click creates a new JSClient object, loads it from the input areas
+        // and passes it to the object’s Add or Update method
+        // It checks for numbers and Booleans before stuffing them into the object’s properties.
+        // Error messages and Exceptions are displayed in a red label or a rich text box, one line per message.
+        private void btnSaveVisitHistory_Click(object sender, EventArgs e)
+        {
+            lblMessageVisitRecord.Text = "";
+
+            JSVisitRecord jSVisitRecord = new JSVisitRecord();
+
+            // Validation might be here....
+            if (int.TryParse(txtRecordId.Text, out int recordId))
+            {
+                jSVisitRecord.RecordId = recordId;
+            }
+            else
+            {
+                lblMessageVisitRecord.Text += "RecordId should be a integer number.\n";
+            }
+
+            // Validation might be here....
+            if (int.TryParse(txtVisitRecordClientId.Text, out int visitRecordClientId))
+            {
+                jSVisitRecord.ClientId = visitRecordClientId;
+            }
+            else
+            {
+                lblMessageVisitRecord.Text += "Client ID should be a integer number.\n";
+            }
+            jSVisitRecord.ClientName = txtVisitRecordClientName.Text;
+            jSVisitRecord.Service = txtService.Text;
+            jSVisitRecord.Worker = cmbboxWorker.Text;
+            
+            if (Double.TryParse(txtPrice.Text, out Double price))
+            {
+                jSVisitRecord.Price = price;
+            }
+            else
+            {
+                lblMessageVisitRecord.Text += "Price should be a double number.\n";
+            }
+            if (Double.TryParse(txtTips.Text, out Double tip))
+            {
+                jSVisitRecord.Tips = tip;
+            }
+            else
+            {
+                lblMessageVisitRecord.Text += "Tips should be a double number.\n";
+            }
+            jSVisitRecord.Method = cmbboxMethod.Text;
+            if (Double.TryParse(txtGST.Text, out Double gst))
+            {
+                jSVisitRecord.GST = gst;
+            }
+            else
+            {
+                lblMessageVisitRecord.Text += "GST should be a double number.\n";
+            }
+            if (Double.TryParse(txtQST.Text, out Double qst))
+            {
+                jSVisitRecord.QST = qst;
+            }
+            else
+            {
+                lblMessageVisitRecord.Text += "QST should be a double number.\n";
+            }
+            if (Double.TryParse(txtTotal.Text, out Double total))
+            {
+                jSVisitRecord.Total = total;
+            }
+            else
+            {
+                lblMessageVisitRecord.Text += "Total should be a double number.\n";
+            }
+            if (DateTime.TryParse(dtDate.Text, out DateTime dtdate))
+            {
+                jSVisitRecord.Date = dtdate;
+            }
+            else
+            {
+                lblMessageVisitRecord.Text += "Date should be in a Date format.\n";
+            }
+            
+            jSVisitRecord.Start = dtStart.Text;
+            jSVisitRecord.End = dtEnd.Text;
+            jSVisitRecord.Status= cmbboxStatus.Text;
+            jSVisitRecord.SpecialRequest = rtxtSpecialRequest.Text;
+
+
+            if (lblMessageVisitRecord.Text != "")
             {
                 return;
             }
@@ -131,87 +411,128 @@ namespace RiumSalon
             {
                 // When the user successfully adds a new Stock or updates an existing Stock: 
                 // The ListBox needs to be reloaded and resorted, and the modified/new record selected.
-                if (client.ClientId == 0)
+                if (jSVisitRecord.RecordId == 0)
                 {
-                    client.JSAdd(client);
-                    RebuildStockList(client.ClientId);
-                    lblMessage.Text = $"The record with Name '{client.ClientName}' is added.\n";
+                    jSVisitRecord.JSAdd(jSVisitRecord);
+                    RebuildVisitRecordList(jSVisitRecord.ClientId);
+                    lblMessageVisitRecord.Text = $"The Visit Record with ClientName '{jSVisitRecord.ClientName}' is added.\n";
                 }
                 else
                 {
-                    client.JSUpdate(client);
-                    RebuildStockList(client.ClientId);
-                    lblMessage.Text = $"The record with Name '{client.ClientName}' is updated.\n";
+                    jSVisitRecord.JSUpdate(jSVisitRecord);
+
+                    int index = gridViewVisitRecord.CurrentCell.RowIndex;
+                    RebuildVisitRecordList(jSVisitRecord.ClientId);
+                    gridViewVisitRecord.Rows[index].Selected = true;
+                    lblMessageVisitRecord.Text = $"The Visit Record with ClientName '{jSVisitRecord.ClientName}' is updated.\n";
                 }
             }
             catch (Exception ex)
             {
-                lblMessage.Text += ex.Message;
+                lblMessageVisitRecord.Text += ex.Message;
             }
         }
 
-        // btnCancel_Click returns the input areas to their values before the user cleared or modified them.
+        // btnCancelVisitHistory_Click returns the input areas to their values before the user cleared or modified them.
         // What remembers the original StockId, whether it was an update or add that was cancelled?
-        private void btnCancelProfile_Click(object sender, EventArgs e)
+        private void btnCancelVisitHistory_Click(object sender, EventArgs e)
         {
-            lblMessage.Text = "";
+            lblMessageVisitRecord.Text = "";
             try
             {
-                if (!(lstboxNav.SelectedIndex == -1))
+                int index = gridViewVisitRecord.CurrentCell.RowIndex;
+
+                if (!(int.Parse(gridViewVisitRecord.SelectedRows[0].Cells[0].Value.ToString()) == -1))
                 {
-                    JSClient stock = JSClient.JSGetByClientId(int.Parse(lstboxNav.SelectedValue.ToString()));
-                    RebuildStockList(stock.ClientId);
-                    lblMessage.Text = "Canceled.\n";
+                    JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(gridViewVisitRecord.SelectedRows[0].Cells[0].Value.ToString()));
+                    RebuildVisitRecordList(jSVisitRecord.ClientId);
+                    gridViewVisitRecord.Rows[index].Selected = true;
+                    lblMessageProfile.Text = "Canceled.\n";
                 }
                 else
                 {
-                    lblMessage.Text += "The list is empty.\n";
+                    lblMessageProfile.Text += "The list is empty.\n";
                 }
             }
             catch (Exception ex)
             {
-                lblMessage.Text += ex.Message;
+                lblMessageProfile.Text += ex.Message;
             }
+        }
+
+        // btnCalculate_Click calculates and autofill GST, QST and Total
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            lblMessageVisitRecord.Text = "";
+
+            // Validation for Calculation
+            if (Double.TryParse(txtPrice.Text, out Double price) && Double.TryParse(txtTips.Text, out Double tip))
+            {
+                Double gst = price * 0.05;
+                Double qst = price * 0.09975;
+
+                txtGST.Text = gst.ToString();
+                txtQST.Text = qst.ToString();
+                txtTotal.Text = (gst + qst + tip).ToString();
+            }
+            else
+            {
+                lblMessageVisitRecord.Text += "The Price/Tips is empty.\n";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtService.Text = "Women's Haircut";
+            cmbboxWorker.Text = "Marie";
+            txtPrice.Text = "119";
+            txtTips.Text = "27.36";
+            cmbboxMethod.Text = "VISA";
+            txtGST.Text = "5.95";
+            txtQST.Text = "11.87";
+            txtTotal.Text = "164.18";
+            cmbboxStatus.Text = "confirmed";
         }
 
         // btnDelete_Click deletes the recrod with the given StockId from the file
-        private void btnDeleteProfile_Click(object sender, EventArgs e)
+        private void btnDeleteVisitHistory_Click(object sender, EventArgs e)
         {
-            lblMessage.Text = "";
+
+            lblMessageVisitRecord.Text = "";
 
             try
             {
-                DialogResult result = MessageBox.Show("Do you want delete " + txtName.Text + "?", "Delete Confirmation", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
+                // When the user deletes an existing record:
+                // The ListBox needs to be reloaded, and have the record after
+                // the one deleted selected (or the last record, if the user deleted the prior last record).
+                if (txtRecordId.Text == "0" || txtRecordId.Text == "")
                 {
-                    // When the user deletes an existing record:
-                    // The ListBox needs to be reloaded, and have the record after
-                    // the one deleted selected (or the last record, if the user deleted the prior last record).
-                    int index = lstboxNav.SelectedIndex;
+                    lblMessageVisitRecord.Text += "You should select a client to delete.\n";
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Do you want delete Visit Record with Record ID '" + txtRecordId.Text + "'?", "Delete Confirmation", MessageBoxButtons.YesNo);
 
-                    if (index + 1 == lstboxNav.Items.Count)
+                    if (result == DialogResult.Yes)
                     {
-                        --index;
-                    }
+                        int index = gridViewVisitRecord.CurrentCell.RowIndex;
 
-                    if ((lstboxNav.SelectedIndex == -1) || txtClientId.Text == "0")
-                    {
-                        lblMessage.Text += "You should select a stock to delete.\n";
-                    }
-                    else
-                    {
-                        JSClient stock = JSClient.JSGetByClientId(int.Parse(lstboxNav.SelectedValue.ToString()));
-                        stock.JSDelete(txtClientId.Text);
-                        RebuildStockList();
-                        lstboxNav.SelectedIndex = index;
-                        lblMessage.Text = $"The record with Stock ID '{stock.ClientId}' is deleted.\n";
+                        if (index + 1 == gridViewVisitRecord.Rows.Count)
+                        {
+                            --index;
+                        }
+
+                        JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(gridViewVisitRecord.SelectedRows[0].Cells[0].Value.ToString()));
+                        jSVisitRecord.JSDelete(txtRecordId.Text);
+                        RebuildVisitRecordList();
+                        gridViewVisitRecord.Rows[index].Selected = true;
+                        lblMessageVisitRecord.Text = $"The record with Record ID '{jSVisitRecord.RecordId}' is deleted.\n";
                     }
                 }
             }
             catch (Exception ex)
             {
-                lblMessage.Text += ex.Message;
+                lblMessageVisitRecord.Text += ex.Message;
             }
         }
     }

@@ -20,7 +20,7 @@ namespace RiumSalon.JSClasses
         #region fields
         static StreamWriter writer;
         static StreamReader reader;
-        static string filePath = "Client.txt", archieve = "archive.txt";
+        static string filePath = "Client.txt", archieve = "archiveClient.txt";
         #endregion
 
         #region properties
@@ -123,7 +123,7 @@ namespace RiumSalon.JSClasses
             }
             catch (Exception ex)
             {
-                throw new Exception("Exception on getting client by Name:\n" + ex.Message);
+                throw new Exception("Exception on getting Clients by Name:\n" + ex.Message);
             }
         }
         #endregion

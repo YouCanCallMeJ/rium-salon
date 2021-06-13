@@ -52,9 +52,9 @@
     <Compile Include="ClientDBManagement.Designer.cs">
       <DependentUpon>ClientDBManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="JSClasses\JSVisitHistory.cs" />
     <Compile Include="JSClasses\JSClient.cs" />
     <Compile Include="JSClasses\JSClientValidation.cs" />
+    <Compile Include="JSClasses\JSVisitRecord.cs" />
     <Compile Include="RiumSalonMain.cs">
       <SubType>Form</SubType>
     </Compile>
