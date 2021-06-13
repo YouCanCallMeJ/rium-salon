@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 namespace RiumSalon.JSClasses
 {
     /*
-     * JSClient.cs
-     *      Rium Salon Coiffure JSClient Class
+     * JSVisitHistory.cs
+     *      Rium Salon Coiffure JSVisitHistory Class
      * Revision history
-     *      Junseo Yang, 2021.06.11 Created
-     *      Junseo Yang, 2021.06.13 Edited
+     *      Junseo Yang, 2021.06.13 Created
      */
 
-    class JSClient
+    class JSVisitHistory
     {
         #region fields
         static StreamWriter writer;
