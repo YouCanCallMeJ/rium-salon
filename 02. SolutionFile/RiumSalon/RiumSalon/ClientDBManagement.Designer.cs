@@ -752,7 +752,7 @@ namespace RiumSalon
             this.gridViewVisitRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridViewVisitRecord.Size = new System.Drawing.Size(652, 189);
             this.gridViewVisitRecord.TabIndex = 0;
-            this.gridViewVisitRecord.SelectionChanged += new System.EventHandler(this.gridViewVisitRecord_SelectionChanged);
+            this.gridViewVisitRecord.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewVisitRecord_CellContentClick);
             // 
             // lblCopyright
             // 

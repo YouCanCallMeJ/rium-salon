@@ -241,57 +241,76 @@ namespace RiumSalon
         }
 
         // lstboxVistRecord_SelectedIndexChanged is for When the user selects a Client, that Client’s properties are loaded to the input areas.
-        private void gridViewVisitRecord_SelectionChanged(object sender, EventArgs e)
+        private void gridViewVisitRecord_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             lblMessageVisitRecord.Text = "";
 
             try
             {
-                // When the user selects a Visit Record, that Visit Record’s properties are loaded to the input areas.
-                JSVisitRecord jSVisitRecord =  new JSVisitRecord();
-                List<JSVisitRecord> jSVisitRecordByClientId = JSVisitRecord.JSGetVisitRecordsByClientId(int.Parse(txtClientId.Text));
-                if (jSVisitRecordByClientId.Count == 0)
-                {
-                    jSVisitRecord = JSVisitRecord.JSGetByRecordId();
-                }
-                else
-                {
+                var selectedVisitRecord = gridViewVisitRecord.SelectedRows[0].DataBoundItem as JSVisitRecord;
+                txtRecordId.Text = selectedVisitRecord.RecordId.ToString();
+                txtVisitRecordClientId.Text = selectedVisitRecord.ClientId.ToString();
+                txtVisitRecordClientName.Text = selectedVisitRecord.ClientName.ToString();
+                txtService.Text = selectedVisitRecord.Service.ToString();
+                cmbboxWorker.SelectedItem = selectedVisitRecord.Worker.ToString();
+                txtPrice.Text = selectedVisitRecord.Price.ToString();
+                txtTips.Text = selectedVisitRecord.Tips.ToString();
+                cmbboxMethod.SelectedItem = selectedVisitRecord.Method.ToString();
+                txtGST.Text = selectedVisitRecord.GST.ToString();
+                txtQST.Text = selectedVisitRecord.QST.ToString();
+                txtTotal.Text = selectedVisitRecord.Total.ToString();
+                dtDate.Value = selectedVisitRecord.Date;
+                dtStart.Text = selectedVisitRecord.Start;
+                dtEnd.Text = selectedVisitRecord.End;
+                cmbboxStatus.SelectedItem = selectedVisitRecord.Status.ToString();
+                rtxtSpecialRequest.Text = selectedVisitRecord.SpecialRequest.ToString();
 
-                }
-                
+                //// When the user selects a Visit Record, that Visit Record’s properties are loaded to the input areas.
+                //JSVisitRecord jSVisitRecord = new JSVisitRecord();
+                //List<JSVisitRecord> jSVisitRecordByClientId = JSVisitRecord.JSGetVisitRecordsByClientId(int.Parse(txtClientId.Text));
+                //if (jSVisitRecordByClientId.Count == 0)
+                //{
+                //    jSVisitRecord = JSVisitRecord.JSGetByRecordId();
+                //}
+                //else
+                //{
 
-                if (jSVisitRecord != null)
-                {
-                    txtRecordId.Text = jSVisitRecord.RecordId.ToString();
-                    txtVisitRecordClientId.Text = jSVisitRecord.ClientId.ToString();
-                    txtVisitRecordClientName.Text = jSVisitRecord.ClientName.ToString();
-                    txtService.Text = jSVisitRecord.Service.ToString();
-                    cmbboxWorker.SelectedItem = jSVisitRecord.Worker.ToString();
-                    txtPrice.Text = jSVisitRecord.Price.ToString();
-                    txtTips.Text = jSVisitRecord.Tips.ToString();
-                    cmbboxMethod.SelectedItem = jSVisitRecord.Method.ToString();
-                    txtGST.Text = jSVisitRecord.GST.ToString();
-                    txtQST.Text = jSVisitRecord.QST.ToString();
-                    txtTotal.Text = jSVisitRecord.Total.ToString();
-                    dtDate.Value = jSVisitRecord.Date;
-                    dtStart.Text = jSVisitRecord.Start;
-                    dtEnd.Text = jSVisitRecord.End;
-                    cmbboxStatus.SelectedItem = jSVisitRecord.Status.ToString();
-                    rtxtSpecialRequest.Text = jSVisitRecord.SpecialRequest.ToString();
+                //}
 
-                    // When a record is selected in the ListBox, this should shout “this is an update!”.
-                    lblMessageVisitRecord.Text += "This is an update.\n";
-                }
-                else
-                {
-                    lblMessageVisitRecord.Text = $"The Visit Record is empty.\n";
-                }
+
+                //if (jSVisitRecord != null)
+                //{
+                //txtRecordId.Text = jSVisitRecord.RecordId.ToString();
+                //txtVisitRecordClientId.Text = jSVisitRecord.ClientId.ToString();
+                //txtVisitRecordClientName.Text = jSVisitRecord.ClientName.ToString();
+                //txtService.Text = jSVisitRecord.Service.ToString();
+                //cmbboxWorker.SelectedItem = jSVisitRecord.Worker.ToString();
+                //txtPrice.Text = jSVisitRecord.Price.ToString();
+                //txtTips.Text = jSVisitRecord.Tips.ToString();
+                //cmbboxMethod.SelectedItem = jSVisitRecord.Method.ToString();
+                //txtGST.Text = jSVisitRecord.GST.ToString();
+                //txtQST.Text = jSVisitRecord.QST.ToString();
+                //txtTotal.Text = jSVisitRecord.Total.ToString();
+                //dtDate.Value = jSVisitRecord.Date;
+                //dtStart.Text = jSVisitRecord.Start;
+                //dtEnd.Text = jSVisitRecord.End;
+                //cmbboxStatus.SelectedItem = jSVisitRecord.Status.ToString();
+                //rtxtSpecialRequest.Text = jSVisitRecord.SpecialRequest.ToString();
+
+                //    // When a record is selected in the ListBox, this should shout “this is an update!”.
+                //    lblMessageVisitRecord.Text += "This is an update.\n";
+                //}
+                //else
+                //{
+                //    lblMessageVisitRecord.Text = $"The Visit Record is empty.\n";
+                //}
             }
             catch (Exception ex)
             {
                 lblMessageVisitRecord.Text += ex.Message;
             }
         }
+
 
         // btnClearInputs_Click ready the input areas for a new record.
         // It also signals “this is a new record”.
@@ -468,8 +487,8 @@ namespace RiumSalon
             // Validation for Calculation
             if (Double.TryParse(txtPrice.Text, out Double price) && Double.TryParse(txtTips.Text, out Double tip))
             {
-                Double gst = price * 0.05;
-                Double qst = price * 0.09975;
+                Double gst = Math.Round(price * 0.05, 2);
+                Double qst = Math.Round(price * 0.09975, 2);
 
                 txtGST.Text = gst.ToString();
                 txtQST.Text = qst.ToString();

@@ -1,1 +1,2 @@
 -2	6	Bec Camille	Women's Haircut	Marie	119	27.36	VISA	5.95	11.87	164.18	2021-06-13 12:00:00 AM	10:33 PM	10:33 PM	confirmed	
+-3	6	Bec Camille	Women's Haircut	Marie	119	27.36	VISA	5.95	11.87	164.18	2021-06-14 12:00:00 AM	11:53 PM	11:53 PM	confirmed	
