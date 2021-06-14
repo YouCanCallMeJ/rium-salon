@@ -20,3 +20,7 @@ Visit Record
 - 조회하고 싶은 Visit Record 클릭 시 해당 Visit Record Info가 자동으로 하단 입력창에 채워짐
 3. Visit Record 업데이트: Visit Record 조회 후 업데이트된 정보 입력 후 Save 버튼
 3. Visit Record 삭제: Visit Record 조회 후 Delete 버튼 클릭
+
+Error 표시
+1. Client Profile 관련 Error: 오른쪽 상단
+2. Visit Record 관련 Error: 왼쪽 하단
