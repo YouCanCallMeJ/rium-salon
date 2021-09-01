@@ -1,7 +1,6 @@
 D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\bin\Debug\RiumSalon.exe.config
 D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\bin\Debug\RiumSalon.exe
 D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\bin\Debug\RiumSalon.pdb
-D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\obj\Debug\RiumSalon.csprojAssemblyReference.cache
 D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\obj\Debug\RiumSalon.ClientDBManagement.resources
 D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\obj\Debug\RiumSalon.RiumSalonMain.resources
 D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\obj\Debug\RiumSalon.Properties.Resources.resources
@@ -9,3 +8,4 @@ D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management 
 D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\obj\Debug\RiumSalon.csproj.CoreCompileInputs.cache
 D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\obj\Debug\RiumSalon.exe
 D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\obj\Debug\RiumSalon.pdb
+D:\01. 개인\07. Projects\Rium Salon 2021-03-12\02. Client Database Management System\02. SolutionFile\RiumSalon\RiumSalon\obj\Debug\RiumSalon.csproj.AssemblyReference.cache

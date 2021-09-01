@@ -1,0 +1,22 @@
+How to Use
+1. RiumSalon.exe 파일 실행
+2. Client DB Management 버튼 클릭
+3. RiumSalon.exe과 같은 위치에 Client.txt 파일 자동생성(데이터 로컬저장용이므로 지우시면 안됩니다.)
+4. RiumSalon.exe과 같은 위치에 VisitRecord.txt 파일 자동생성(데이터 로컬저장용이므로 지우시면 안됩니다.)
+
+Client Profile
+1. Client Profile 생성: Clear 버튼 클릭 후 Client Info 입력 후 Save 버튼
+- Client Profile 생성시 중복된 이름의 Client는 생성되지 않습니다.
+- Name(Required), Phone(Optional), Email(Optional), Notes(Optional)
+2. Client Profile 조회: 왼쪽 Client List에서 이름 클릭
+3. Client Profile 업데이트: Client Profile 조회 후 업데이트된 정보 입력 후 Save 버튼
+4. Client Profile 삭제: Client Profile 조회 후 Delete 버튼 클릭
+
+Visit Record
+1. Visit Record 생성: Clear 버튼 클릭 후 Visit Record Info(비어있는 칸만 작성) 입력 후 Save 버튼
+- Client ID 및 Name(AutoFill), Service(Optional), Worker(Optional), Price(Number only), Tips(Number only), Method(Optional), GST(Number only), QST(Number only), Total(Number only), Date(Optional), Start(Optional), EndDate(Optional), StatusDate(Optional), Special RequestDate(Optional)
+- Calculate 버튼: Price 와 Tips를 입력하고 누르면 자동으로 GST, QST 및 Total 계산되어 채워짐(Decimal 2 digit Round)
+2. Visit Record 조회: Client Profile 조회 시에 자동으로 해당 Client의 Visit Record가 조회됨
+- 조회하고 싶은 Visit Record 클릭 시 해당 Visit Record Info가 자동으로 하단 입력창에 채워짐
+3. Visit Record 업데이트: Visit Record 조회 후 업데이트된 정보 입력 후 Save 버튼
+3. Visit Record 삭제: Visit Record 조회 후 Delete 버튼 클릭

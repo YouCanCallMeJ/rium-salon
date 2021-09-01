@@ -328,6 +328,7 @@ namespace RiumSalon
             txtGST.Text = "";
             txtQST.Text = "";
             txtTotal.Text = "";
+            rtxtSpecialRequest.Text = "";
 
             lblMessageVisitRecord.Text += "This is a new record.\n";
         }
@@ -492,7 +493,7 @@ namespace RiumSalon
 
                 txtGST.Text = gst.ToString();
                 txtQST.Text = qst.ToString();
-                txtTotal.Text = (gst + qst + tip).ToString();
+                txtTotal.Text = (price + tip + gst + qst).ToString();
             }
             else
             {
