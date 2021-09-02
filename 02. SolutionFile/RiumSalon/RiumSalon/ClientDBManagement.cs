@@ -254,7 +254,7 @@ namespace RiumSalon
                 txtService.Text = selectedVisitRecord.Service.ToString();
                 cmbboxWorker.SelectedItem = selectedVisitRecord.Worker.ToString();
                 txtPrice.Text = selectedVisitRecord.Price.ToString();
-                txtTips.Text = selectedVisitRecord.Tips.ToString();
+                txtTipsDollar.Text = selectedVisitRecord.Tips.ToString();
                 cmbboxMethod.SelectedItem = selectedVisitRecord.Method.ToString();
                 txtGST.Text = selectedVisitRecord.GST.ToString();
                 txtQST.Text = selectedVisitRecord.QST.ToString();
@@ -324,7 +324,7 @@ namespace RiumSalon
             txtVisitRecordClientName.Text = txtName.Text;
             txtService.Text = "";
             txtPrice.Text = "";
-            txtTips.Text = "";
+            txtTipsDollar.Text = "";
             txtGST.Text = "";
             txtQST.Text = "";
             txtTotal.Text = "";
@@ -374,7 +374,7 @@ namespace RiumSalon
             {
                 lblMessageVisitRecord.Text += "Price should be a double number.\n";
             }
-            if (Double.TryParse(txtTips.Text, out Double tip))
+            if (Double.TryParse(txtTipsDollar.Text, out Double tip))
             {
                 jSVisitRecord.Tips = tip;
             }
@@ -486,7 +486,7 @@ namespace RiumSalon
             lblMessageVisitRecord.Text = "";
 
             // Validation for Calculation
-            if (Double.TryParse(txtPrice.Text, out Double price) && Double.TryParse(txtTips.Text, out Double tip))
+            if (Double.TryParse(txtPrice.Text, out Double price) && Double.TryParse(txtTipsDollar.Text, out Double tip))
             {
                 Double gst = Math.Round(price * 0.05, 2);
                 Double qst = Math.Round(price * 0.09975, 2);
@@ -506,7 +506,7 @@ namespace RiumSalon
             txtService.Text = "Women's Haircut";
             cmbboxWorker.Text = "Marie";
             txtPrice.Text = "119";
-            txtTips.Text = "27.36";
+            txtTipsDollar.Text = "27.36";
             cmbboxMethod.Text = "VISA";
             txtGST.Text = "5.95";
             txtQST.Text = "11.87";
@@ -554,6 +554,11 @@ namespace RiumSalon
             {
                 lblMessageVisitRecord.Text += ex.Message;
             }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
