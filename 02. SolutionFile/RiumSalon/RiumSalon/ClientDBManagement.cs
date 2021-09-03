@@ -442,11 +442,10 @@ namespace RiumSalon
 
                 if (lstboxNavVisitRecord.SelectedIndex != -1)
                 {
-                    
-                    JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(lstboxNavVisitRecord.SelectedIndex.ToString()));
+                    JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(lstboxNavVisitRecord.SelectedValue.ToString()));
                     RebuildVisitRecordList(jSVisitRecord.ClientId);
                     lstboxNavVisitRecord.SelectedIndex = index;
-                    lblMessageProfile.Text = "Canceled.\n";
+                    lblMessageVisitRecord.Text = "Canceled.\n";
                 }
                 else
                 {
