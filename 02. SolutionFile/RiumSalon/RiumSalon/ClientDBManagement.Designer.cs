@@ -45,7 +45,8 @@ namespace RiumSalon
             this.btnCancelProfile = new System.Windows.Forms.Button();
             this.btnDeleteProfile = new System.Windows.Forms.Button();
             this.grpboxEditVisitRecordManually = new System.Windows.Forms.GroupBox();
-            this.txtTipsPercent = new System.Windows.Forms.TextBox();
+            this.cmbboxService = new System.Windows.Forms.ComboBox();
+            this.cmbboxTipsPercent = new System.Windows.Forms.ComboBox();
             this.lblTipsDollar = new System.Windows.Forms.Label();
             this.lblMessageVisitRecord = new System.Windows.Forms.Label();
             this.cmbboxStatus = new System.Windows.Forms.ComboBox();
@@ -83,7 +84,6 @@ namespace RiumSalon
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblService = new System.Windows.Forms.Label();
-            this.txtService = new System.Windows.Forms.TextBox();
             this.lblRecordId = new System.Windows.Forms.Label();
             this.txtRecordId = new System.Windows.Forms.TextBox();
             this.grpboxClientProfile = new System.Windows.Forms.GroupBox();
@@ -260,7 +260,8 @@ namespace RiumSalon
             this.grpboxEditVisitRecordManually.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpboxEditVisitRecordManually.Controls.Add(this.txtTipsPercent);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.cmbboxService);
+            this.grpboxEditVisitRecordManually.Controls.Add(this.cmbboxTipsPercent);
             this.grpboxEditVisitRecordManually.Controls.Add(this.lblTipsDollar);
             this.grpboxEditVisitRecordManually.Controls.Add(this.lblMessageVisitRecord);
             this.grpboxEditVisitRecordManually.Controls.Add(this.cmbboxStatus);
@@ -298,7 +299,6 @@ namespace RiumSalon
             this.grpboxEditVisitRecordManually.Controls.Add(this.lblPrice);
             this.grpboxEditVisitRecordManually.Controls.Add(this.txtPrice);
             this.grpboxEditVisitRecordManually.Controls.Add(this.lblService);
-            this.grpboxEditVisitRecordManually.Controls.Add(this.txtService);
             this.grpboxEditVisitRecordManually.Controls.Add(this.lblRecordId);
             this.grpboxEditVisitRecordManually.Controls.Add(this.txtRecordId);
             this.grpboxEditVisitRecordManually.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -309,13 +309,46 @@ namespace RiumSalon
             this.grpboxEditVisitRecordManually.TabStop = false;
             this.grpboxEditVisitRecordManually.Text = "Edit Visit Record Manually";
             // 
-            // txtTipsPercent
+            // cmbboxService
             // 
-            this.txtTipsPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTipsPercent.Location = new System.Drawing.Point(246, 99);
-            this.txtTipsPercent.Name = "txtTipsPercent";
-            this.txtTipsPercent.Size = new System.Drawing.Size(70, 25);
-            this.txtTipsPercent.TabIndex = 3;
+            this.cmbboxService.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbboxService.FormattingEnabled = true;
+            this.cmbboxService.Items.AddRange(new object[] {
+            "Men\'s Bleaching Color",
+            "Men\'s Color",
+            "Men\'s Perm",
+            "Men\'s Sidedown-Perm",
+            "Men\'s Haircut",
+            "Women\'s Botox Treatment",
+            "Women\'s Balayage, Hightlights, Ombre & Color with Design",
+            "Women\'s Root Touch Up (Less than 3cm)",
+            "Women\'s Color",
+            "Women\'s Root Volume / Bang Perm",
+            "Women\'s Straight & Wave Permanent",
+            "Women\'s Wave / Straight Permanent",
+            "Women\'s Blowdry & Styling",
+            "Women\'s Bang Cut",
+            "Women\'s Haircut"});
+            this.cmbboxService.Location = new System.Drawing.Point(78, 66);
+            this.cmbboxService.Name = "cmbboxService";
+            this.cmbboxService.Size = new System.Drawing.Size(238, 28);
+            this.cmbboxService.TabIndex = 100;
+            this.cmbboxService.SelectedIndexChanged += new System.EventHandler(this.cmbboxService_SelectedIndexChanged);
+            // 
+            // cmbboxTipsPercent
+            // 
+            this.cmbboxTipsPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbboxTipsPercent.FormattingEnabled = true;
+            this.cmbboxTipsPercent.Items.AddRange(new object[] {
+            "10",
+            "15",
+            "20",
+            "25"});
+            this.cmbboxTipsPercent.Location = new System.Drawing.Point(246, 99);
+            this.cmbboxTipsPercent.Name = "cmbboxTipsPercent";
+            this.cmbboxTipsPercent.Size = new System.Drawing.Size(70, 28);
+            this.cmbboxTipsPercent.TabIndex = 3;
+            this.cmbboxTipsPercent.SelectedIndexChanged += new System.EventHandler(this.cmbboxTipsPercent_SelectedIndexChanged);
             // 
             // lblTipsDollar
             // 
@@ -334,11 +367,11 @@ namespace RiumSalon
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMessageVisitRecord.AutoSize = true;
-            this.lblMessageVisitRecord.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.lblMessageVisitRecord.Font = new System.Drawing.Font("Arial Narrow", 10F);
             this.lblMessageVisitRecord.ForeColor = System.Drawing.Color.Red;
-            this.lblMessageVisitRecord.Location = new System.Drawing.Point(322, 15);
+            this.lblMessageVisitRecord.Location = new System.Drawing.Point(155, 15);
             this.lblMessageVisitRecord.Name = "lblMessageVisitRecord";
-            this.lblMessageVisitRecord.Size = new System.Drawing.Size(21, 20);
+            this.lblMessageVisitRecord.Size = new System.Drawing.Size(17, 17);
             this.lblMessageVisitRecord.TabIndex = 80;
             this.lblMessageVisitRecord.Text = "...";
             // 
@@ -482,6 +515,7 @@ namespace RiumSalon
             this.txtTipsDollar.Name = "txtTipsDollar";
             this.txtTipsDollar.Size = new System.Drawing.Size(70, 25);
             this.txtTipsDollar.TabIndex = 4;
+            this.txtTipsDollar.TextChanged += new System.EventHandler(this.txtTipsDollar_TextChanged);
             // 
             // lblQST
             // 
@@ -719,14 +753,6 @@ namespace RiumSalon
             this.lblService.TabIndex = 99;
             this.lblService.Text = "Service";
             // 
-            // txtService
-            // 
-            this.txtService.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtService.Location = new System.Drawing.Point(78, 68);
-            this.txtService.Name = "txtService";
-            this.txtService.Size = new System.Drawing.Size(238, 25);
-            this.txtService.TabIndex = 0;
-            // 
             // lblRecordId
             // 
             this.lblRecordId.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -784,6 +810,7 @@ namespace RiumSalon
             this.btnSaveProfile.TabIndex = 5;
             this.btnSaveProfile.Text = "Save";
             this.btnSaveProfile.UseVisualStyleBackColor = true;
+            this.btnSaveProfile.Click += new System.EventHandler(this.btnSaveProfile_Click);
             // 
             // txtPhone
             // 
@@ -867,7 +894,6 @@ namespace RiumSalon
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 661);
             this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // lblTitle
             // 
@@ -888,11 +914,12 @@ namespace RiumSalon
             // lblMessageProfile
             // 
             this.lblMessageProfile.AutoSize = true;
+            this.lblMessageProfile.Font = new System.Drawing.Font("Arial Narrow", 10F);
             this.lblMessageProfile.ForeColor = System.Drawing.Color.Red;
-            this.lblMessageProfile.Location = new System.Drawing.Point(500, 35);
+            this.lblMessageProfile.Location = new System.Drawing.Point(502, 35);
             this.lblMessageProfile.Name = "lblMessageProfile";
             this.lblMessageProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblMessageProfile.Size = new System.Drawing.Size(16, 13);
+            this.lblMessageProfile.Size = new System.Drawing.Size(17, 17);
             this.lblMessageProfile.TabIndex = 64;
             this.lblMessageProfile.Text = "...";
             this.lblMessageProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -948,7 +975,6 @@ namespace RiumSalon
         private System.Windows.Forms.Label lblRecordId;
         private System.Windows.Forms.TextBox txtRecordId;
         private System.Windows.Forms.Label lblService;
-        private System.Windows.Forms.TextBox txtService;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblWorker;
@@ -990,9 +1016,10 @@ namespace RiumSalon
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblMessageProfile;
         private System.Windows.Forms.Label lblTipsDollar;
-        private System.Windows.Forms.TextBox txtTipsPercent;
         private System.Windows.Forms.Button btnSaveProfile;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ListBox lstboxNavVisitRecord;
+        private System.Windows.Forms.ComboBox cmbboxTipsPercent;
+        private System.Windows.Forms.ComboBox cmbboxService;
     }
 }

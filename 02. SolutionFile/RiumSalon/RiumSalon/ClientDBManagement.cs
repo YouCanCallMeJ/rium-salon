@@ -66,6 +66,9 @@ namespace RiumSalon
                 txtEmail.Text = client.ClientEmail.ToString();
                 rtxtNotes.Text = client.ClientNotes.ToString();
 
+                // select cmbboxTipPercent nothing
+                cmbboxTipsPercent.SelectedIndex = -1;
+
                 // When a record is selected in the ListBox, this should shout “this is an update!”.
                 lblMessageProfile.Text += "This is an update.\n";
 
@@ -256,7 +259,7 @@ namespace RiumSalon
                     txtRecordId.Text = jSVisitRecord.RecordId.ToString();
                     txtVisitRecordClientId.Text = jSVisitRecord.ClientId.ToString();
                     txtVisitRecordClientName.Text = jSVisitRecord.ClientName.ToString();
-                    txtService.Text = jSVisitRecord.Service.ToString();
+                    cmbboxService.Text = jSVisitRecord.Service.ToString();
                     cmbboxWorker.SelectedItem = jSVisitRecord.Worker.ToString();
                     txtPrice.Text = jSVisitRecord.Price.ToString();
                     txtTipsDollar.Text = jSVisitRecord.Tips.ToString();
@@ -269,6 +272,9 @@ namespace RiumSalon
                     dtEnd.Text = jSVisitRecord.End;
                     cmbboxStatus.SelectedItem = jSVisitRecord.Status.ToString();
                     rtxtSpecialRequest.Text = jSVisitRecord.SpecialRequest.ToString();
+
+                    // select cmbboxTipPercent nothing
+                    cmbboxTipsPercent.SelectedIndex = -1;
 
                     // When a record is selected in the ListBox, this should shout “this is an update!”.
                     lblMessageVisitRecord.Text += "This is an update.\n";
@@ -294,7 +300,7 @@ namespace RiumSalon
             txtRecordId.Text = "0";
             txtVisitRecordClientId.Text = txtClientId.Text;
             txtVisitRecordClientName.Text = txtName.Text;
-            txtService.Text = "";
+            cmbboxService.Text = "";
             txtPrice.Text = "";
             txtTipsDollar.Text = "";
             txtGST.Text = "";
@@ -335,7 +341,7 @@ namespace RiumSalon
                 lblMessageVisitRecord.Text += "Client ID should be a integer number.\n";
             }
             jSVisitRecord.ClientName = txtVisitRecordClientName.Text;
-            jSVisitRecord.Service = txtService.Text;
+            jSVisitRecord.Service = cmbboxService.Text;
             jSVisitRecord.Worker = cmbboxWorker.Text;
             
             if (Double.TryParse(txtPrice.Text, out Double price))
@@ -468,15 +474,11 @@ namespace RiumSalon
                 txtQST.Text = qst.ToString();
                 txtTotal.Text = (price + tip + gst + qst).ToString();
             }
-            else
-            {
-                lblMessageVisitRecord.Text += "The Price/Tips is empty.\n";
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtService.Text = "Women's Haircut";
+            cmbboxService.Text = "Women's Haircut";
             cmbboxWorker.Text = "Marie";
             txtPrice.Text = "119";
             txtTipsDollar.Text = "27.36";
@@ -515,8 +517,7 @@ namespace RiumSalon
                             --index;
                         }
 
-                        
-                        JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(lstboxNavVisitRecord.SelectedIndex.ToString()));
+                        JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(lstboxNavVisitRecord.SelectedValue.ToString()));
                         jSVisitRecord.JSDelete(txtRecordId.Text);
                         RebuildVisitRecordList();
                         lstboxNavVisitRecord.SelectedIndex = index;
@@ -530,9 +531,37 @@ namespace RiumSalon
             }
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        // Automatically Change txtTipsDollar when TipsPercent is selected
+        private void cmbboxTipsPercent_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lblMessageVisitRecord.Text = "";
 
+            try
+            {
+                if (txtPrice.Text != "" && Double.TryParse(txtPrice.Text, out double price))
+                {
+                    txtTipsDollar.Text = (price * Double.Parse(cmbboxTipsPercent.Text) / 100).ToString();
+                }
+                else
+                {
+                    lblMessageVisitRecord.Text += "You should enter a number in the price to calculate tips.\n";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageVisitRecord.Text += ex.Message;
+            }
+        }
+
+        // Automatically Change txtPrice when cmbboxService is selected
+        private void cmbboxService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtPrice.Text = JSUtility.returnServiceFee(cmbboxService.Text);
+        }
+
+        private void txtTipsDollar_TextChanged(object sender, EventArgs e)
+        {
+            btnCalculate_Click(sender, e);
         }
     }
 }

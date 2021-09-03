@@ -125,3 +125,5 @@
 125	Claris Gu	4384085018	clarisgu@gmail.com	
 126	Jiwon Kim	5148045325	tnzs@naver.com	
 127	Serena	5148023881	Serena.lee@live.ca	
+128	Kate	5145460328		
+129	SeHoon Hong	5142249787		

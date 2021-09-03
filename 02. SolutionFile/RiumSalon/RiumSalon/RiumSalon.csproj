@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="JSClasses\JSClient.cs" />
     <Compile Include="JSClasses\JSClientValidation.cs" />
+    <Compile Include="JSClasses\JSUtility.cs" />
     <Compile Include="JSClasses\JSVisitRecord.cs" />
     <Compile Include="RiumSalonMain.cs">
       <SubType>Form</SubType>
