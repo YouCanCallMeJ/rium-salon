@@ -1,5 +1,127 @@
-1	Jay	2368656088		by 다니엘
-2	Strawberry MaMan	5144446993		발래아쥬 더 높게 원하심
-4	Jessica	6043150099		by 다니엘
-5	Jack	5144529374		by 다니엘
-6	Bec Camille	4385231539	cbec2306@gmail.com	
+1	Bec Camille	4385231539	cbec2306@gmail.com	
+2	Dennis kang	6478618282	Chossaian@hotmail.com	
+3	Elise Thai	5146868848	thai.elise@gmail.com	
+4	Zhiyang Deng	5148060130	Iamyang130@gmail.com	
+5	Grace	5148910316	hhr0316@gmail.com	
+6	Kuma	4385092580	momo_0711@hotmail.com	
+7	Wooyeon Lee	6476208229	dldndus22@gmail.com	
+8	Tianyi Liu	4383418379	tinjiklauglobal@gmail.com	
+9	Gabriel Mathon	8196680577	gabrielmathon22@gmail.com	
+10	Chloé Hu	5146513486	huyuning1995@yahoo.com	
+11	Kyungil Won	5145155276	rickkyungilwon@gmail.com	
+12	Jeremie	4384054235	Jeremieduguaychevrier@gmail.com	
+13	jin	6478655062	523524161@qq.com	
+14	Amy Li	6132207249	amy.x.li16@gmail.com	
+15	Ranya Jabir	5146684956	ranyajabir528@gmail.com	
+16	Oleksandr Palokha	5144095733	palokha.oa@gmail.com	
+17	Kunsoo Han	5142169140	kunsoohan@gmail.com	
+18	Magali Thouvenin	4388778244	magali.thouvenin@laposte.net	
+19	FRANCIS ROBERGE	5144362046	francis.roberge@gmail.com	
+20	Rima	5819930429	Rimarian13@gmail.coM	
+21	Sherie Solis	4389881206	sheriesolis1987@gmail.com	
+22	Angel Duma	4388320244	angelduma.12@gmail.com	
+23	Antoine Bourgé	4389247237	antoine-bourge@hotmail.fr	
+24	Manuarii Gouronnec	5145496371	manuarii.gouronnec@gmail.com	
+25	Emmy Caron	5142686979	emmy_paquet_caron@hotmail.com	
+26	Isabelle Quach	5148832476	qisabelle95@gmail.com	
+27	Melanie H	5142943806	Melaniesho@hotmail.com	
+28	Crystal Yang	6476337317	crystaly.289@gmail.com	
+29	Josh kim	5146224465	Joshua940308@gmail.com	
+30	Rebecca Morel	5146639796	rebecca.morel@free.fr	
+31	Kathy	5142174590	kathymaiwoo@hotmail.com	
+32	Hyowon kim	6476192594	khwsuper@gmail.com	
+33	Sujung shin	4382235556	ssj8893@naver.com	
+34	Eda Ozbek	5144314203	ozbeda45@hotmail.com	
+35	Anne-Marie Ouellet	4389933601	annemarieouellet@gmail.com	
+36	Chang Sui	4389797452	chang.sui@mail.mcgill.ca	
+37	Angelina Guo	4383511402	guoange.2200@gmail.com	
+38	Liliane Ha	5148303532	thlilianeha@gmail.com	
+39	Audrey Brackley	4389933638	audreybrackley@gmail.com	
+40	Geneviève Gariépy	4383892183	genevieve2.gariepy@gmail.com	
+41	Tiffanie Chau	5145313931	tiffanie.cy.chau@gmail.com	
+42	Shirley Lau	5148927426	shirleylau1998@hotmail.com	
+43	Jonquille	5142177226	jonquille.lemaistre@gmail.com	
+44	Chenxin Han	4385034908	chenxinh3594@gmail.com	
+45	Winnie kim	4384011335	winniekim_09@hotmail.com	
+46	Byungwook Kang	4382336359	wook9809@gmail.com	
+47	Che Nakatsu	5149674021	Nakatsu056@gmail.com	
+48	Kim krkr	4385038392	krkr175@gmail.com	
+49	Annie	5145836728	annie-dang1@hotmail.com	
+50	Jocelyne Nguyen	5162601834	jojo.nguyen07@gmail.com	
+51	Michael Ru	6475158968	ru.michael2000@gmail.com	
+52	Anna Senina	5146492134	senina.anna22@gmail.com	
+53	Joël Benoit-Lagace	4388376823	joel.benoit.lagace@hotmail.ca	
+54	Nancy Deng	5144669956	deng.nanxy204@gmail.com	
+55	Amelie	4389945727	Kimamelietrinh@gmail.com	
+56	William Wang	5149523385	willw4f3@gmail.com	
+57	Jane	5147108168	Janexmding@hotmail.com	
+58	Patrick Park	5148332701	patricktjpark@gmail.com	
+59	Stephanie Trinh	5145135439	trinh_stephanie@hotmail.com	
+60	Jessica Zeng	5149757510	jessie.zeng0304@gmail.com	
+61	Woohyun Kang	4382257696	kwh1990@gmail.com	
+62	Michelle Huang	5149470516	maisuut@gmail.com	
+63	Karina Wang	5146550818	karinawangzhe@gmail.com	
+64	Yoon Park			
+65	Anh Nguyen	5147061308	Nka1308@gmail.com	
+66	JoonSeok Park	4385808319	js.steven.park@bmo.com	
+67	Nelson Fuentes	4389881206	sheriesolis1987@gmail.com	
+68	Sungtae Kim	5146224465	joshua940308@gmail.com	
+69	Jhun	5149149006	jrussursua@gmail.com	
+70	Lee	5145713031	eunjikim2018@gmail.com	
+71	Alina	4389263078	limeng970721@gmail.com	
+72	Christina Guluzian	5142292793	leguar1@hotmail.com	
+73	Jack Zhang	6478697749	zjzhang1@gmail.com	
+74	Annie Jiang	5147047226	anni_jiang@outlook.com	
+75	Oanh	5146928866	oanh.mai.kn@gmail.com	
+76	Jennifer	5147128566	jenniferdang@hotmail.com	
+77	Laurendy Lam	5142062226	lamlaurendy@gmail.com	
+78	Owen Lin	6043631213	owenlin12345@gmail.com	
+79	Marc Jeanne-Julien	4385213507	marc.jeanne.julien@gmail.com	
+80	Jianing	6478395652	Jianing23@hotmail.com	
+81	Minya Bai	4383349351	minyabai25@gmail.com	
+82	Yuni choi	5149940965	Younhyuk19@gmail.com	
+83	Hugo Millet	4384093219	mhugo88@hotmail.com	
+84	Lilian Yoffe	6478027020	lilian.yoffe63@gmail.com	
+85	Jessica Gignac	5144516689	Jessica.gignac@gmail.com	
+86	Scarlett Niu	5145617933	niuscarlett@gmail.com	
+87	Chan Kim	4388854497	mktibi@hotmail.com	
+88	Grace Yeh	4388847248	Grace@brigadepizza.com	
+89	Junyoung Lee	5142913880	nielx2@gmail.com	
+90	Tania	5149163128	tanchengyi1120@gmail.com	
+91	tingting wang	5146606912	tingtingwang842@gmail.com	
+92	Hayoung Youn	4384641201	hayoungpiano@gmail.com	
+93	Charlene Long	5148243866	chlong0619@gmail.com	
+94	Veronica Jang	4384042499	veronicajchang@hotmail.com	
+95	Sooji Hah	5145627200	49s.hah@gmail.com	
+96	Lida Tan	6478663612	sztld123@gmail.com	
+97	Lydia Lee	4387638483	lydia2003lee@gmail.com	
+98	Sophia Karabatsos	2899260071	sophiakarabatsos@gmail.com	
+99	Renita Wang	4388322558	renitawang@gmail.com	
+100	jaey	5145535796	ok10920@gmail.com	
+101	Mitchell Kwan	4388286398	mkwan181@gmail.com	
+102	Yiqing Xia	4389796294	hiroki1994@hotmail.com	
+103	Ji-Woo	4187327324	jiwoo.park.x@gmail.com	
+104	Catherine Daigneault	4383987586	catherine.mai.ly.daigneault@gmail.com	
+105	Olivia	5147559441	wieclawskaoliwia@gmail.com	
+106	Bianca Posadas	5148980599	posadasb@outlook.com	
+107	Mia	5149758047	mwoo2753@gmail.com	
+108	Sabrina Li	4386807851	tianning.li@mail.mcgill.ca	
+109	Michael ho	4388802022	Michael.ho11@hotmail.com	
+110	1982	6476192594	khwsuper@gmail.com	
+111	Yi Chen Yao	5144765754	yic_yao@outlook.com	
+112	Erica Imperial	4382292712	erica.imperial1325@gmail.com	
+113	Marina Fernandez	5145697754	Marina.lzfz@gmail.com	
+114	Theo Cui	5149620819	theoqcui@gmail.com	
+115	Monica Wang	4389291088	monicawangbalala@gmail.com	
+116	Michelle bbs	5145829644	bb0512@hotmail.com	
+117	Luyang	5146626125	yly0910xly@gmail.com	
+118	Louie Yusi	5146889293	d.louieyusi@gmail.com	
+119	Sheery	5148836170	sherry_malik@hotmail.com	
+120	Dana Goerzen	6134490967	dana.goerzen@mail.mcgill.ca	
+121	Marc-André Blackburn	4182715235	blackburn123@hotmail.fr	
+122	Grace Gong	5146230408	0408gong@gmail.com	
+123	kyungjin Park	4384833761	kjinpark@gmail.com	
+124	Seungmin(Daniel) Pyo	2045582405	seungminpyo0128@gmail.com	
+125	Claris Gu	4384085018	clarisgu@gmail.com	
+126	Jiwon Kim	5148045325	tnzs@naver.com	
+127	Serena	5148023881	Serena.lee@live.ca	

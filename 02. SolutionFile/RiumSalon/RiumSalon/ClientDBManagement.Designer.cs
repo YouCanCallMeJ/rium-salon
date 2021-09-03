@@ -30,7 +30,7 @@ namespace RiumSalon
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientDBManagement));
-            this.lstboxNav = new System.Windows.Forms.ListBox();
+            this.lstboxNavClient = new System.Windows.Forms.ListBox();
             this.lblClientId = new System.Windows.Forms.Label();
             this.txtClientId = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -45,6 +45,8 @@ namespace RiumSalon
             this.btnCancelProfile = new System.Windows.Forms.Button();
             this.btnDeleteProfile = new System.Windows.Forms.Button();
             this.grpboxEditVisitRecordManually = new System.Windows.Forms.GroupBox();
+            this.txtTipsPercent = new System.Windows.Forms.TextBox();
+            this.lblTipsDollar = new System.Windows.Forms.Label();
             this.lblMessageVisitRecord = new System.Windows.Forms.Label();
             this.cmbboxStatus = new System.Windows.Forms.ComboBox();
             this.lblVisitRecordClientName = new System.Windows.Forms.Label();
@@ -85,36 +87,33 @@ namespace RiumSalon
             this.lblRecordId = new System.Windows.Forms.Label();
             this.txtRecordId = new System.Windows.Forms.TextBox();
             this.grpboxClientProfile = new System.Windows.Forms.GroupBox();
+            this.btnSaveProfile = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.grpboxNav = new System.Windows.Forms.GroupBox();
             this.grpboxViewVisitRecord = new System.Windows.Forms.GroupBox();
-            this.gridViewVisitRecord = new System.Windows.Forms.DataGridView();
             this.lblCopyright = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblMessageProfile = new System.Windows.Forms.Label();
-            this.lblTipsDollar = new System.Windows.Forms.Label();
-            this.txtTipsPercent = new System.Windows.Forms.TextBox();
-            this.btnSaveProfile = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lblMessageProfile = new System.Windows.Forms.Label();
+            this.lstboxNavVisitRecord = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).BeginInit();
             this.grpboxEditVisitRecordManually.SuspendLayout();
             this.grpboxClientProfile.SuspendLayout();
             this.grpboxNav.SuspendLayout();
             this.grpboxViewVisitRecord.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewVisitRecord)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstboxNav
+            // lstboxNavClient
             // 
-            this.lstboxNav.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstboxNav.FormattingEnabled = true;
-            this.lstboxNav.ItemHeight = 20;
-            this.lstboxNav.Location = new System.Drawing.Point(3, 21);
-            this.lstboxNav.Name = "lstboxNav";
-            this.lstboxNav.Size = new System.Drawing.Size(168, 238);
-            this.lstboxNav.TabIndex = 0;
-            this.lstboxNav.SelectedIndexChanged += new System.EventHandler(this.lstboxNav_SelectedIndexChanged);
+            this.lstboxNavClient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstboxNavClient.FormattingEnabled = true;
+            this.lstboxNavClient.ItemHeight = 20;
+            this.lstboxNavClient.Location = new System.Drawing.Point(3, 21);
+            this.lstboxNavClient.Name = "lstboxNavClient";
+            this.lstboxNavClient.Size = new System.Drawing.Size(168, 238);
+            this.lstboxNavClient.TabIndex = 0;
+            this.lstboxNavClient.SelectedIndexChanged += new System.EventHandler(this.lstboxNav_SelectedIndexChanged);
             // 
             // lblClientId
             // 
@@ -310,6 +309,25 @@ namespace RiumSalon
             this.grpboxEditVisitRecordManually.TabStop = false;
             this.grpboxEditVisitRecordManually.Text = "Edit Visit Record Manually";
             // 
+            // txtTipsPercent
+            // 
+            this.txtTipsPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTipsPercent.Location = new System.Drawing.Point(246, 99);
+            this.txtTipsPercent.Name = "txtTipsPercent";
+            this.txtTipsPercent.Size = new System.Drawing.Size(70, 25);
+            this.txtTipsPercent.TabIndex = 82;
+            // 
+            // lblTipsDollar
+            // 
+            this.lblTipsDollar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTipsDollar.AutoSize = true;
+            this.lblTipsDollar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipsDollar.Location = new System.Drawing.Point(322, 101);
+            this.lblTipsDollar.Name = "lblTipsDollar";
+            this.lblTipsDollar.Size = new System.Drawing.Size(49, 20);
+            this.lblTipsDollar.TabIndex = 81;
+            this.lblTipsDollar.Text = "Tips($)";
+            // 
             // lblMessageVisitRecord
             // 
             this.lblMessageVisitRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -318,20 +336,21 @@ namespace RiumSalon
             this.lblMessageVisitRecord.AutoSize = true;
             this.lblMessageVisitRecord.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.lblMessageVisitRecord.ForeColor = System.Drawing.Color.Red;
-            this.lblMessageVisitRecord.Location = new System.Drawing.Point(5, 346);
+            this.lblMessageVisitRecord.Location = new System.Drawing.Point(322, 15);
             this.lblMessageVisitRecord.Name = "lblMessageVisitRecord";
-            this.lblMessageVisitRecord.Size = new System.Drawing.Size(0, 20);
+            this.lblMessageVisitRecord.Size = new System.Drawing.Size(21, 20);
             this.lblMessageVisitRecord.TabIndex = 80;
+            this.lblMessageVisitRecord.Text = "...";
             // 
             // cmbboxStatus
             // 
             this.cmbboxStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbboxStatus.FormattingEnabled = true;
             this.cmbboxStatus.Items.AddRange(new object[] {
-            "pending",
             "confirmed",
+            "pending",
             "canceled"});
-            this.cmbboxStatus.Location = new System.Drawing.Point(426, 146);
+            this.cmbboxStatus.Location = new System.Drawing.Point(427, 159);
             this.cmbboxStatus.Name = "cmbboxStatus";
             this.cmbboxStatus.Size = new System.Drawing.Size(165, 28);
             this.cmbboxStatus.TabIndex = 9;
@@ -341,7 +360,7 @@ namespace RiumSalon
             this.lblVisitRecordClientName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblVisitRecordClientName.AutoSize = true;
             this.lblVisitRecordClientName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVisitRecordClientName.Location = new System.Drawing.Point(321, 27);
+            this.lblVisitRecordClientName.Location = new System.Drawing.Point(322, 40);
             this.lblVisitRecordClientName.Name = "lblVisitRecordClientName";
             this.lblVisitRecordClientName.Size = new System.Drawing.Size(43, 20);
             this.lblVisitRecordClientName.TabIndex = 77;
@@ -350,7 +369,7 @@ namespace RiumSalon
             // txtVisitRecordClientName
             // 
             this.txtVisitRecordClientName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtVisitRecordClientName.Location = new System.Drawing.Point(381, 24);
+            this.txtVisitRecordClientName.Location = new System.Drawing.Point(382, 37);
             this.txtVisitRecordClientName.Name = "txtVisitRecordClientName";
             this.txtVisitRecordClientName.Size = new System.Drawing.Size(210, 25);
             this.txtVisitRecordClientName.TabIndex = 78;
@@ -360,7 +379,7 @@ namespace RiumSalon
             this.lblVisitRecordClientId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblVisitRecordClientId.AutoSize = true;
             this.lblVisitRecordClientId.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVisitRecordClientId.Location = new System.Drawing.Point(168, 26);
+            this.lblVisitRecordClientId.Location = new System.Drawing.Point(169, 39);
             this.lblVisitRecordClientId.Name = "lblVisitRecordClientId";
             this.lblVisitRecordClientId.Size = new System.Drawing.Size(56, 20);
             this.lblVisitRecordClientId.TabIndex = 75;
@@ -369,7 +388,7 @@ namespace RiumSalon
             // txtVisitRecordClientId
             // 
             this.txtVisitRecordClientId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtVisitRecordClientId.Location = new System.Drawing.Point(230, 24);
+            this.txtVisitRecordClientId.Location = new System.Drawing.Point(231, 37);
             this.txtVisitRecordClientId.Name = "txtVisitRecordClientId";
             this.txtVisitRecordClientId.Size = new System.Drawing.Size(85, 25);
             this.txtVisitRecordClientId.TabIndex = 76;
@@ -381,7 +400,7 @@ namespace RiumSalon
             this.cmbboxWorker.Items.AddRange(new object[] {
             "Daniel",
             "Marie"});
-            this.cmbboxWorker.Location = new System.Drawing.Point(381, 53);
+            this.cmbboxWorker.Location = new System.Drawing.Point(382, 66);
             this.cmbboxWorker.Name = "cmbboxWorker";
             this.cmbboxWorker.Size = new System.Drawing.Size(85, 28);
             this.cmbboxWorker.TabIndex = 1;
@@ -390,7 +409,7 @@ namespace RiumSalon
             // 
             this.btnCalculate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCalculate.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalculate.Location = new System.Drawing.Point(461, 115);
+            this.btnCalculate.Location = new System.Drawing.Point(462, 128);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(130, 28);
             this.btnCalculate.TabIndex = 5;
@@ -410,7 +429,7 @@ namespace RiumSalon
             "Apple Pay",
             "Interac",
             "Debit"});
-            this.cmbboxMethod.Location = new System.Drawing.Point(514, 84);
+            this.cmbboxMethod.Location = new System.Drawing.Point(515, 97);
             this.cmbboxMethod.Name = "cmbboxMethod";
             this.cmbboxMethod.Size = new System.Drawing.Size(77, 28);
             this.cmbboxMethod.TabIndex = 4;
@@ -420,7 +439,7 @@ namespace RiumSalon
             this.lblMethod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMethod.AutoSize = true;
             this.lblMethod.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMethod.Location = new System.Drawing.Point(457, 88);
+            this.lblMethod.Location = new System.Drawing.Point(458, 101);
             this.lblMethod.Name = "lblMethod";
             this.lblMethod.Size = new System.Drawing.Size(51, 20);
             this.lblMethod.TabIndex = 70;
@@ -431,7 +450,7 @@ namespace RiumSalon
             this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(321, 119);
+            this.lblTotal.Location = new System.Drawing.Point(322, 132);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(53, 20);
             this.lblTotal.TabIndex = 68;
@@ -440,7 +459,7 @@ namespace RiumSalon
             // txtTotal
             // 
             this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTotal.Location = new System.Drawing.Point(381, 117);
+            this.txtTotal.Location = new System.Drawing.Point(382, 130);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(70, 25);
             this.txtTotal.TabIndex = 69;
@@ -450,7 +469,7 @@ namespace RiumSalon
             this.lblTipsPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTipsPercent.AutoSize = true;
             this.lblTipsPercent.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipsPercent.Location = new System.Drawing.Point(153, 88);
+            this.lblTipsPercent.Location = new System.Drawing.Point(154, 101);
             this.lblTipsPercent.Name = "lblTipsPercent";
             this.lblTipsPercent.Size = new System.Drawing.Size(53, 20);
             this.lblTipsPercent.TabIndex = 3;
@@ -459,7 +478,7 @@ namespace RiumSalon
             // txtTipsDollar
             // 
             this.txtTipsDollar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTipsDollar.Location = new System.Drawing.Point(381, 86);
+            this.txtTipsDollar.Location = new System.Drawing.Point(382, 99);
             this.txtTipsDollar.Name = "txtTipsDollar";
             this.txtTipsDollar.Size = new System.Drawing.Size(70, 25);
             this.txtTipsDollar.TabIndex = 3;
@@ -469,7 +488,7 @@ namespace RiumSalon
             this.lblQST.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblQST.AutoSize = true;
             this.lblQST.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQST.Location = new System.Drawing.Point(153, 119);
+            this.lblQST.Location = new System.Drawing.Point(154, 132);
             this.lblQST.Name = "lblQST";
             this.lblQST.Size = new System.Drawing.Size(86, 20);
             this.lblQST.TabIndex = 64;
@@ -478,7 +497,7 @@ namespace RiumSalon
             // txtQST
             // 
             this.txtQST.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtQST.Location = new System.Drawing.Point(245, 117);
+            this.txtQST.Location = new System.Drawing.Point(246, 130);
             this.txtQST.Name = "txtQST";
             this.txtQST.Size = new System.Drawing.Size(70, 25);
             this.txtQST.TabIndex = 65;
@@ -488,7 +507,7 @@ namespace RiumSalon
             this.lblGST.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGST.AutoSize = true;
             this.lblGST.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGST.Location = new System.Drawing.Point(6, 119);
+            this.lblGST.Location = new System.Drawing.Point(7, 132);
             this.lblGST.Name = "lblGST";
             this.lblGST.Size = new System.Drawing.Size(62, 20);
             this.lblGST.TabIndex = 62;
@@ -497,7 +516,7 @@ namespace RiumSalon
             // txtGST
             // 
             this.txtGST.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtGST.Location = new System.Drawing.Point(77, 117);
+            this.txtGST.Location = new System.Drawing.Point(78, 130);
             this.txtGST.Name = "txtGST";
             this.txtGST.Size = new System.Drawing.Size(70, 25);
             this.txtGST.TabIndex = 63;
@@ -507,7 +526,7 @@ namespace RiumSalon
             this.btnDeleteVisitHistory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDeleteVisitHistory.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteVisitHistory.ForeColor = System.Drawing.Color.Red;
-            this.btnDeleteVisitHistory.Location = new System.Drawing.Point(342, 277);
+            this.btnDeleteVisitHistory.Location = new System.Drawing.Point(343, 290);
             this.btnDeleteVisitHistory.Name = "btnDeleteVisitHistory";
             this.btnDeleteVisitHistory.Size = new System.Drawing.Size(80, 30);
             this.btnDeleteVisitHistory.TabIndex = 14;
@@ -520,7 +539,7 @@ namespace RiumSalon
             this.lblSpecialRequest2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSpecialRequest2.AutoSize = true;
             this.lblSpecialRequest2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpecialRequest2.Location = new System.Drawing.Point(7, 202);
+            this.lblSpecialRequest2.Location = new System.Drawing.Point(8, 215);
             this.lblSpecialRequest2.Name = "lblSpecialRequest2";
             this.lblSpecialRequest2.Size = new System.Drawing.Size(55, 20);
             this.lblSpecialRequest2.TabIndex = 61;
@@ -530,7 +549,7 @@ namespace RiumSalon
             // 
             this.btnCancelVisitHistory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelVisitHistory.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelVisitHistory.Location = new System.Drawing.Point(428, 277);
+            this.btnCancelVisitHistory.Location = new System.Drawing.Point(429, 290);
             this.btnCancelVisitHistory.Name = "btnCancelVisitHistory";
             this.btnCancelVisitHistory.Size = new System.Drawing.Size(80, 30);
             this.btnCancelVisitHistory.TabIndex = 13;
@@ -541,7 +560,7 @@ namespace RiumSalon
             // rtxtSpecialRequest
             // 
             this.rtxtSpecialRequest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rtxtSpecialRequest.Location = new System.Drawing.Point(77, 179);
+            this.rtxtSpecialRequest.Location = new System.Drawing.Point(78, 192);
             this.rtxtSpecialRequest.Name = "rtxtSpecialRequest";
             this.rtxtSpecialRequest.Size = new System.Drawing.Size(514, 92);
             this.rtxtSpecialRequest.TabIndex = 10;
@@ -552,7 +571,7 @@ namespace RiumSalon
             this.btnSaveVisitHistory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSaveVisitHistory.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveVisitHistory.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnSaveVisitHistory.Location = new System.Drawing.Point(511, 277);
+            this.btnSaveVisitHistory.Location = new System.Drawing.Point(512, 290);
             this.btnSaveVisitHistory.Name = "btnSaveVisitHistory";
             this.btnSaveVisitHistory.Size = new System.Drawing.Size(80, 30);
             this.btnSaveVisitHistory.TabIndex = 12;
@@ -565,7 +584,7 @@ namespace RiumSalon
             this.lblSpecialRequest1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSpecialRequest1.AutoSize = true;
             this.lblSpecialRequest1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpecialRequest1.Location = new System.Drawing.Point(7, 181);
+            this.lblSpecialRequest1.Location = new System.Drawing.Point(8, 194);
             this.lblSpecialRequest1.Name = "lblSpecialRequest1";
             this.lblSpecialRequest1.Size = new System.Drawing.Size(51, 20);
             this.lblSpecialRequest1.TabIndex = 22;
@@ -575,7 +594,7 @@ namespace RiumSalon
             // 
             this.btnClearVisitHistory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClearVisitHistory.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearVisitHistory.Location = new System.Drawing.Point(256, 277);
+            this.btnClearVisitHistory.Location = new System.Drawing.Point(257, 290);
             this.btnClearVisitHistory.Name = "btnClearVisitHistory";
             this.btnClearVisitHistory.Size = new System.Drawing.Size(80, 30);
             this.btnClearVisitHistory.TabIndex = 11;
@@ -588,7 +607,7 @@ namespace RiumSalon
             this.dtEnd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtEnd.CustomFormat = "HH:mm";
             this.dtEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtEnd.Location = new System.Drawing.Point(311, 148);
+            this.dtEnd.Location = new System.Drawing.Point(312, 161);
             this.dtEnd.Name = "dtEnd";
             this.dtEnd.ShowUpDown = true;
             this.dtEnd.Size = new System.Drawing.Size(60, 25);
@@ -599,7 +618,7 @@ namespace RiumSalon
             this.dtStart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtStart.CustomFormat = "HH:mm";
             this.dtStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtStart.Location = new System.Drawing.Point(208, 148);
+            this.dtStart.Location = new System.Drawing.Point(209, 161);
             this.dtStart.Name = "dtStart";
             this.dtStart.ShowUpDown = true;
             this.dtStart.Size = new System.Drawing.Size(60, 25);
@@ -610,7 +629,7 @@ namespace RiumSalon
             this.dtDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtDate.CustomFormat = "";
             this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDate.Location = new System.Drawing.Point(77, 148);
+            this.dtDate.Location = new System.Drawing.Point(78, 161);
             this.dtDate.Name = "dtDate";
             this.dtDate.Size = new System.Drawing.Size(85, 25);
             this.dtDate.TabIndex = 6;
@@ -620,7 +639,7 @@ namespace RiumSalon
             this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(377, 150);
+            this.lblStatus.Location = new System.Drawing.Point(378, 163);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(43, 20);
             this.lblStatus.TabIndex = 38;
@@ -631,7 +650,7 @@ namespace RiumSalon
             this.lblEnd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEnd.AutoSize = true;
             this.lblEnd.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnd.Location = new System.Drawing.Point(274, 150);
+            this.lblEnd.Location = new System.Drawing.Point(275, 163);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(31, 20);
             this.lblEnd.TabIndex = 36;
@@ -642,7 +661,7 @@ namespace RiumSalon
             this.lblStart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStart.AutoSize = true;
             this.lblStart.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStart.Location = new System.Drawing.Point(168, 150);
+            this.lblStart.Location = new System.Drawing.Point(169, 163);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(34, 20);
             this.lblStart.TabIndex = 34;
@@ -664,7 +683,7 @@ namespace RiumSalon
             this.lblWorker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblWorker.AutoSize = true;
             this.lblWorker.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWorker.Location = new System.Drawing.Point(321, 57);
+            this.lblWorker.Location = new System.Drawing.Point(322, 70);
             this.lblWorker.Name = "lblWorker";
             this.lblWorker.Size = new System.Drawing.Size(48, 20);
             this.lblWorker.TabIndex = 30;
@@ -675,7 +694,7 @@ namespace RiumSalon
             this.lblPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(7, 88);
+            this.lblPrice.Location = new System.Drawing.Point(8, 101);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(53, 20);
             this.lblPrice.TabIndex = 28;
@@ -684,7 +703,7 @@ namespace RiumSalon
             // txtPrice
             // 
             this.txtPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrice.Location = new System.Drawing.Point(77, 86);
+            this.txtPrice.Location = new System.Drawing.Point(78, 99);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(70, 25);
             this.txtPrice.TabIndex = 2;
@@ -694,7 +713,7 @@ namespace RiumSalon
             this.lblService.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblService.AutoSize = true;
             this.lblService.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblService.Location = new System.Drawing.Point(6, 57);
+            this.lblService.Location = new System.Drawing.Point(7, 70);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(50, 20);
             this.lblService.TabIndex = 26;
@@ -703,7 +722,7 @@ namespace RiumSalon
             // txtService
             // 
             this.txtService.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtService.Location = new System.Drawing.Point(77, 55);
+            this.txtService.Location = new System.Drawing.Point(78, 68);
             this.txtService.Name = "txtService";
             this.txtService.Size = new System.Drawing.Size(238, 25);
             this.txtService.TabIndex = 0;
@@ -713,7 +732,7 @@ namespace RiumSalon
             this.lblRecordId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRecordId.AutoSize = true;
             this.lblRecordId.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordId.Location = new System.Drawing.Point(6, 26);
+            this.lblRecordId.Location = new System.Drawing.Point(7, 39);
             this.lblRecordId.Name = "lblRecordId";
             this.lblRecordId.Size = new System.Drawing.Size(65, 20);
             this.lblRecordId.TabIndex = 22;
@@ -723,7 +742,7 @@ namespace RiumSalon
             // 
             this.txtRecordId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRecordId.Enabled = false;
-            this.txtRecordId.Location = new System.Drawing.Point(77, 24);
+            this.txtRecordId.Location = new System.Drawing.Point(78, 37);
             this.txtRecordId.Name = "txtRecordId";
             this.txtRecordId.Size = new System.Drawing.Size(85, 25);
             this.txtRecordId.TabIndex = 23;
@@ -754,6 +773,18 @@ namespace RiumSalon
             this.grpboxClientProfile.TabStop = false;
             this.grpboxClientProfile.Text = "Client Profile";
             // 
+            // btnSaveProfile
+            // 
+            this.btnSaveProfile.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSaveProfile.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProfile.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnSaveProfile.Location = new System.Drawing.Point(509, 226);
+            this.btnSaveProfile.Name = "btnSaveProfile";
+            this.btnSaveProfile.Size = new System.Drawing.Size(80, 30);
+            this.btnSaveProfile.TabIndex = 16;
+            this.btnSaveProfile.Text = "Save";
+            this.btnSaveProfile.UseVisualStyleBackColor = true;
+            // 
             // txtPhone
             // 
             this.txtPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -766,7 +797,7 @@ namespace RiumSalon
             // 
             // grpboxNav
             // 
-            this.grpboxNav.Controls.Add(this.lstboxNav);
+            this.grpboxNav.Controls.Add(this.lstboxNavClient);
             this.grpboxNav.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpboxNav.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpboxNav.Location = new System.Drawing.Point(3, 67);
@@ -781,7 +812,7 @@ namespace RiumSalon
             this.grpboxViewVisitRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpboxViewVisitRecord.Controls.Add(this.gridViewVisitRecord);
+            this.grpboxViewVisitRecord.Controls.Add(this.lstboxNavVisitRecord);
             this.grpboxViewVisitRecord.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpboxViewVisitRecord.Location = new System.Drawing.Point(3, 335);
             this.grpboxViewVisitRecord.Name = "grpboxViewVisitRecord";
@@ -789,23 +820,6 @@ namespace RiumSalon
             this.grpboxViewVisitRecord.TabIndex = 62;
             this.grpboxViewVisitRecord.TabStop = false;
             this.grpboxViewVisitRecord.Text = "View Visit Record";
-            // 
-            // gridViewVisitRecord
-            // 
-            this.gridViewVisitRecord.AllowUserToAddRows = false;
-            this.gridViewVisitRecord.AllowUserToDeleteRows = false;
-            this.gridViewVisitRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridViewVisitRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridViewVisitRecord.Location = new System.Drawing.Point(9, 26);
-            this.gridViewVisitRecord.MultiSelect = false;
-            this.gridViewVisitRecord.Name = "gridViewVisitRecord";
-            this.gridViewVisitRecord.RowTemplate.Height = 23;
-            this.gridViewVisitRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridViewVisitRecord.Size = new System.Drawing.Size(150, 291);
-            this.gridViewVisitRecord.TabIndex = 0;
-            this.gridViewVisitRecord.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewVisitRecord_CellContentClick);
             // 
             // lblCopyright
             // 
@@ -844,49 +858,6 @@ namespace RiumSalon
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // lblMessageProfile
-            // 
-            this.lblMessageProfile.AutoSize = true;
-            this.lblMessageProfile.ForeColor = System.Drawing.Color.Red;
-            this.lblMessageProfile.Location = new System.Drawing.Point(500, 35);
-            this.lblMessageProfile.Name = "lblMessageProfile";
-            this.lblMessageProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblMessageProfile.Size = new System.Drawing.Size(16, 13);
-            this.lblMessageProfile.TabIndex = 64;
-            this.lblMessageProfile.Text = "...";
-            this.lblMessageProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTipsDollar
-            // 
-            this.lblTipsDollar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTipsDollar.AutoSize = true;
-            this.lblTipsDollar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipsDollar.Location = new System.Drawing.Point(321, 88);
-            this.lblTipsDollar.Name = "lblTipsDollar";
-            this.lblTipsDollar.Size = new System.Drawing.Size(49, 20);
-            this.lblTipsDollar.TabIndex = 81;
-            this.lblTipsDollar.Text = "Tips($)";
-            // 
-            // txtTipsPercent
-            // 
-            this.txtTipsPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTipsPercent.Location = new System.Drawing.Point(245, 86);
-            this.txtTipsPercent.Name = "txtTipsPercent";
-            this.txtTipsPercent.Size = new System.Drawing.Size(70, 25);
-            this.txtTipsPercent.TabIndex = 82;
-            // 
-            // btnSaveProfile
-            // 
-            this.btnSaveProfile.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSaveProfile.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveProfile.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnSaveProfile.Location = new System.Drawing.Point(509, 226);
-            this.btnSaveProfile.Name = "btnSaveProfile";
-            this.btnSaveProfile.Size = new System.Drawing.Size(80, 30);
-            this.btnSaveProfile.TabIndex = 16;
-            this.btnSaveProfile.Text = "Save";
-            this.btnSaveProfile.UseVisualStyleBackColor = true;
-            // 
             // lblTitle
             // 
             this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -902,6 +873,29 @@ namespace RiumSalon
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Client DB Management";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMessageProfile
+            // 
+            this.lblMessageProfile.AutoSize = true;
+            this.lblMessageProfile.ForeColor = System.Drawing.Color.Red;
+            this.lblMessageProfile.Location = new System.Drawing.Point(500, 35);
+            this.lblMessageProfile.Name = "lblMessageProfile";
+            this.lblMessageProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblMessageProfile.Size = new System.Drawing.Size(16, 13);
+            this.lblMessageProfile.TabIndex = 64;
+            this.lblMessageProfile.Text = "...";
+            this.lblMessageProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lstboxNavVisitRecord
+            // 
+            this.lstboxNavVisitRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstboxNavVisitRecord.FormattingEnabled = true;
+            this.lstboxNavVisitRecord.ItemHeight = 20;
+            this.lstboxNavVisitRecord.Location = new System.Drawing.Point(3, 21);
+            this.lstboxNavVisitRecord.Name = "lstboxNavVisitRecord";
+            this.lstboxNavVisitRecord.Size = new System.Drawing.Size(168, 299);
+            this.lstboxNavVisitRecord.TabIndex = 1;
+            this.lstboxNavVisitRecord.SelectedIndexChanged += new System.EventHandler(this.lstboxNavVisitRecord_SelectedIndexChanged);
             // 
             // ClientDBManagement
             // 
@@ -925,7 +919,6 @@ namespace RiumSalon
             this.grpboxClientProfile.PerformLayout();
             this.grpboxNav.ResumeLayout(false);
             this.grpboxViewVisitRecord.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewVisitRecord)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -935,7 +928,7 @@ namespace RiumSalon
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstboxNav;
+        private System.Windows.Forms.ListBox lstboxNavClient;
         private System.Windows.Forms.Label lblClientId;
         private System.Windows.Forms.TextBox txtClientId;
         private System.Windows.Forms.TextBox txtName;
@@ -994,12 +987,12 @@ namespace RiumSalon
         private System.Windows.Forms.TextBox txtVisitRecordClientName;
         private System.Windows.Forms.ComboBox cmbboxStatus;
         private System.Windows.Forms.Label lblMessageVisitRecord;
-        private System.Windows.Forms.DataGridView gridViewVisitRecord;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblMessageProfile;
         private System.Windows.Forms.Label lblTipsDollar;
         private System.Windows.Forms.TextBox txtTipsPercent;
         private System.Windows.Forms.Button btnSaveProfile;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.ListBox lstboxNavVisitRecord;
     }
 }

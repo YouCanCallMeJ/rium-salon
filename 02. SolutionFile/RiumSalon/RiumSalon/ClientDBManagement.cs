@@ -42,13 +42,13 @@ namespace RiumSalon
             clients = clients.OrderBy(a => a.ClientName).ToList();
 
             // it displays the ClientName and returns the StockId as the ListBox’s value
-            lstboxNav.DisplayMember = "ClientName";
-            lstboxNav.ValueMember = "ClientId";
-            lstboxNav.DataSource = clients;
+            lstboxNavClient.DisplayMember = "ClientName";
+            lstboxNavClient.ValueMember = "ClientId";
+            lstboxNavClient.DataSource = clients;
 
             // clientId type is integer => SelectedValue Type = integer
             if (clientId != 0)
-                lstboxNav.SelectedValue = clientId;
+                lstboxNavClient.SelectedValue = clientId;
         }
 
         // lstboxNav_SelectedIndexChanged is for When the user selects a Client, that Client’s properties are loaded to the input areas.
@@ -57,7 +57,7 @@ namespace RiumSalon
             lblMessageProfile.Text = "";
 
             // When the user selects a Client, that Client’s properties are loaded to the input areas.
-            JSClient client = JSClient.JSGetByClientId(int.Parse(lstboxNav.SelectedValue.ToString()));
+            JSClient client = JSClient.JSGetByClientId(int.Parse(lstboxNavClient.SelectedValue.ToString()));
             if (client != null)
             {
                 txtClientId.Text = client.ClientId.ToString();
@@ -74,7 +74,7 @@ namespace RiumSalon
             }
             else
             {
-                lblMessageProfile.Text = $"The StockId not found: {lstboxNav.SelectedValue}";
+                lblMessageProfile.Text = $"The ClientId not found: {lstboxNavClient.SelectedValue}";
             }
         }
 
@@ -132,7 +132,7 @@ namespace RiumSalon
 
             try
             {
-                int index = lstboxNav.SelectedIndex;
+                int index = lstboxNavClient.SelectedIndex;
 
                 // When the user successfully adds a new Stock or updates an existing Stock: 
                 // The ListBox needs to be reloaded and resorted, and the modified/new record selected.
@@ -146,7 +146,7 @@ namespace RiumSalon
                 {
                     client.JSUpdate(client);
                     RebuildClientList(client.ClientId);
-                    lstboxNav.SelectedIndex = index;
+                    lstboxNavClient.SelectedIndex = index;
                     lblMessageProfile.Text = $"The record with Name '{client.ClientName}' is updated.\n";
                 }
             }
@@ -163,9 +163,9 @@ namespace RiumSalon
             lblMessageProfile.Text = "";
             try
             {
-                if (!(lstboxNav.SelectedIndex == -1))
+                if (!(lstboxNavClient.SelectedIndex == -1))
                 {
-                    JSClient client = JSClient.JSGetByClientId(int.Parse(lstboxNav.SelectedValue.ToString()));
+                    JSClient client = JSClient.JSGetByClientId(int.Parse(lstboxNavClient.SelectedValue.ToString()));
                     RebuildClientList(client.ClientId);
                     lblMessageProfile.Text = "Canceled.\n";
                 }
@@ -190,7 +190,7 @@ namespace RiumSalon
                 // When the user deletes an existing record:
                 // The ListBox needs to be reloaded, and have the record after
                 // the one deleted selected (or the last record, if the user deleted the prior last record).
-                if ((lstboxNav.SelectedIndex == -1) || txtClientId.Text == "0")
+                if ((lstboxNavClient.SelectedIndex == -1) || txtClientId.Text == "0")
                 {
                     lblMessageProfile.Text += "You should select a client to delete.\n";
                 }
@@ -200,17 +200,17 @@ namespace RiumSalon
 
                     if (result == DialogResult.Yes)
                     {
-                        int index = lstboxNav.SelectedIndex;
+                        int index = lstboxNavClient.SelectedIndex;
 
-                        if (index + 1 == lstboxNav.Items.Count)
+                        if (index + 1 == lstboxNavClient.Items.Count)
                         {
                             --index;
                         }
 
-                        JSClient client = JSClient.JSGetByClientId(int.Parse(lstboxNav.SelectedValue.ToString()));
+                        JSClient client = JSClient.JSGetByClientId(int.Parse(lstboxNavClient.SelectedValue.ToString()));
                         client.JSDelete(txtClientId.Text);
                         RebuildClientList();
-                        lstboxNav.SelectedIndex = index;
+                        lstboxNavClient.SelectedIndex = index;
                         lblMessageProfile.Text = $"The record with Client ID '{client.ClientId}' is deleted.\n";
                     }                            
                 }
@@ -234,83 +234,55 @@ namespace RiumSalon
             jSVisitRecordsByClientId = jSVisitRecordsByClientId.OrderBy(a => a.Date).ToList();
 
             // it displays the ClientName and returns the RecordId as the ListBox’s value
-            gridViewVisitRecord.DataSource = jSVisitRecordsByClientId;
-
-            gridViewVisitRecord.AutoResizeColumns();
-            gridViewVisitRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            lstboxNavVisitRecord.DisplayMember = "Date";
+            lstboxNavVisitRecord.ValueMember = "RecordId";
+            lstboxNavVisitRecord.DataSource = jSVisitRecordsByClientId;
         }
 
-        // lstboxVistRecord_SelectedIndexChanged is for When the user selects a Client, that Client’s properties are loaded to the input areas.
-        private void gridViewVisitRecord_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        // lstboxNavVisitRecord_SelectedIndexChanged is for When the user selects a visit record, that visit record’s properties are loaded to the input areas.
+        private void lstboxNavVisitRecord_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblMessageVisitRecord.Text = "";
 
             try
             {
-                var selectedVisitRecord = gridViewVisitRecord.SelectedRows[0].DataBoundItem as JSVisitRecord;
-                txtRecordId.Text = selectedVisitRecord.RecordId.ToString();
-                txtVisitRecordClientId.Text = selectedVisitRecord.ClientId.ToString();
-                txtVisitRecordClientName.Text = selectedVisitRecord.ClientName.ToString();
-                txtService.Text = selectedVisitRecord.Service.ToString();
-                cmbboxWorker.SelectedItem = selectedVisitRecord.Worker.ToString();
-                txtPrice.Text = selectedVisitRecord.Price.ToString();
-                txtTipsDollar.Text = selectedVisitRecord.Tips.ToString();
-                cmbboxMethod.SelectedItem = selectedVisitRecord.Method.ToString();
-                txtGST.Text = selectedVisitRecord.GST.ToString();
-                txtQST.Text = selectedVisitRecord.QST.ToString();
-                txtTotal.Text = selectedVisitRecord.Total.ToString();
-                dtDate.Value = selectedVisitRecord.Date;
-                dtStart.Text = selectedVisitRecord.Start;
-                dtEnd.Text = selectedVisitRecord.End;
-                cmbboxStatus.SelectedItem = selectedVisitRecord.Status.ToString();
-                rtxtSpecialRequest.Text = selectedVisitRecord.SpecialRequest.ToString();
+                // When the user selects a Visit Record, that Visit Record’s properties are loaded to the input areas.
+                List<JSVisitRecord> jSVisitRecordsByClientId = JSVisitRecord.JSGetVisitRecordsByClientId(int.Parse(txtClientId.Text));
 
-                //// When the user selects a Visit Record, that Visit Record’s properties are loaded to the input areas.
-                //JSVisitRecord jSVisitRecord = new JSVisitRecord();
-                //List<JSVisitRecord> jSVisitRecordByClientId = JSVisitRecord.JSGetVisitRecordsByClientId(int.Parse(txtClientId.Text));
-                //if (jSVisitRecordByClientId.Count == 0)
-                //{
-                //    jSVisitRecord = JSVisitRecord.JSGetByRecordId();
-                //}
-                //else
-                //{
+                JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(lstboxNavVisitRecord.SelectedValue.ToString()));
 
-                //}
+                if (jSVisitRecord != null)
+                {
+                    txtRecordId.Text = jSVisitRecord.RecordId.ToString();
+                    txtVisitRecordClientId.Text = jSVisitRecord.ClientId.ToString();
+                    txtVisitRecordClientName.Text = jSVisitRecord.ClientName.ToString();
+                    txtService.Text = jSVisitRecord.Service.ToString();
+                    cmbboxWorker.SelectedItem = jSVisitRecord.Worker.ToString();
+                    txtPrice.Text = jSVisitRecord.Price.ToString();
+                    txtTipsDollar.Text = jSVisitRecord.Tips.ToString();
+                    cmbboxMethod.SelectedItem = jSVisitRecord.Method.ToString();
+                    txtGST.Text = jSVisitRecord.GST.ToString();
+                    txtQST.Text = jSVisitRecord.QST.ToString();
+                    txtTotal.Text = jSVisitRecord.Total.ToString();
+                    dtDate.Value = jSVisitRecord.Date;
+                    dtStart.Text = jSVisitRecord.Start;
+                    dtEnd.Text = jSVisitRecord.End;
+                    cmbboxStatus.SelectedItem = jSVisitRecord.Status.ToString();
+                    rtxtSpecialRequest.Text = jSVisitRecord.SpecialRequest.ToString();
 
-
-                //if (jSVisitRecord != null)
-                //{
-                //txtRecordId.Text = jSVisitRecord.RecordId.ToString();
-                //txtVisitRecordClientId.Text = jSVisitRecord.ClientId.ToString();
-                //txtVisitRecordClientName.Text = jSVisitRecord.ClientName.ToString();
-                //txtService.Text = jSVisitRecord.Service.ToString();
-                //cmbboxWorker.SelectedItem = jSVisitRecord.Worker.ToString();
-                //txtPrice.Text = jSVisitRecord.Price.ToString();
-                //txtTips.Text = jSVisitRecord.Tips.ToString();
-                //cmbboxMethod.SelectedItem = jSVisitRecord.Method.ToString();
-                //txtGST.Text = jSVisitRecord.GST.ToString();
-                //txtQST.Text = jSVisitRecord.QST.ToString();
-                //txtTotal.Text = jSVisitRecord.Total.ToString();
-                //dtDate.Value = jSVisitRecord.Date;
-                //dtStart.Text = jSVisitRecord.Start;
-                //dtEnd.Text = jSVisitRecord.End;
-                //cmbboxStatus.SelectedItem = jSVisitRecord.Status.ToString();
-                //rtxtSpecialRequest.Text = jSVisitRecord.SpecialRequest.ToString();
-
-                //    // When a record is selected in the ListBox, this should shout “this is an update!”.
-                //    lblMessageVisitRecord.Text += "This is an update.\n";
-                //}
-                //else
-                //{
-                //    lblMessageVisitRecord.Text = $"The Visit Record is empty.\n";
-                //}
+                    // When a record is selected in the ListBox, this should shout “this is an update!”.
+                    lblMessageVisitRecord.Text += "This is an update.\n";
+                }
+                else
+                {
+                    lblMessageVisitRecord.Text = $"The Visit Record is empty.\n";
+                }
             }
             catch (Exception ex)
             {
                 lblMessageVisitRecord.Text += ex.Message;
             }
         }
-
 
         // btnClearInputs_Click ready the input areas for a new record.
         // It also signals “this is a new record”.
@@ -441,9 +413,9 @@ namespace RiumSalon
                 {
                     jSVisitRecord.JSUpdate(jSVisitRecord);
 
-                    int index = gridViewVisitRecord.CurrentCell.RowIndex;
+                    int index = lstboxNavVisitRecord.SelectedIndex;
                     RebuildVisitRecordList(jSVisitRecord.ClientId);
-                    gridViewVisitRecord.Rows[index].Selected = true;
+                    lstboxNavVisitRecord.SelectedIndex = index;
                     lblMessageVisitRecord.Text = $"The Visit Record with ClientName '{jSVisitRecord.ClientName}' is updated.\n";
                 }
             }
@@ -460,13 +432,14 @@ namespace RiumSalon
             lblMessageVisitRecord.Text = "";
             try
             {
-                int index = gridViewVisitRecord.CurrentCell.RowIndex;
+                int index = lstboxNavVisitRecord.SelectedIndex;
 
-                if (!(int.Parse(gridViewVisitRecord.SelectedRows[0].Cells[0].Value.ToString()) == -1))
+                if (lstboxNavVisitRecord.SelectedIndex != -1)
                 {
-                    JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(gridViewVisitRecord.SelectedRows[0].Cells[0].Value.ToString()));
+                    
+                    JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(lstboxNavVisitRecord.SelectedIndex.ToString()));
                     RebuildVisitRecordList(jSVisitRecord.ClientId);
-                    gridViewVisitRecord.Rows[index].Selected = true;
+                    lstboxNavVisitRecord.SelectedIndex = index;
                     lblMessageProfile.Text = "Canceled.\n";
                 }
                 else
@@ -535,17 +508,18 @@ namespace RiumSalon
 
                     if (result == DialogResult.Yes)
                     {
-                        int index = gridViewVisitRecord.CurrentCell.RowIndex;
+                        int index = lstboxNavVisitRecord.SelectedIndex;
 
-                        if (index + 1 == gridViewVisitRecord.Rows.Count)
+                        if (index + 1 == lstboxNavVisitRecord.Items.Count)
                         {
                             --index;
                         }
 
-                        JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(gridViewVisitRecord.SelectedRows[0].Cells[0].Value.ToString()));
+                        
+                        JSVisitRecord jSVisitRecord = JSVisitRecord.JSGetByRecordId(int.Parse(lstboxNavVisitRecord.SelectedIndex.ToString()));
                         jSVisitRecord.JSDelete(txtRecordId.Text);
                         RebuildVisitRecordList();
-                        gridViewVisitRecord.Rows[index].Selected = true;
+                        lstboxNavVisitRecord.SelectedIndex = index;
                         lblMessageVisitRecord.Text = $"The record with Record ID '{jSVisitRecord.RecordId}' is deleted.\n";
                     }
                 }
