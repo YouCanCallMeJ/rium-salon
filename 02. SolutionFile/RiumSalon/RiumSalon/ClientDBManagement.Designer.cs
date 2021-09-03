@@ -91,11 +91,11 @@ namespace RiumSalon
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.grpboxNav = new System.Windows.Forms.GroupBox();
             this.grpboxViewVisitRecord = new System.Windows.Forms.GroupBox();
+            this.lstboxNavVisitRecord = new System.Windows.Forms.ListBox();
             this.lblCopyright = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblMessageProfile = new System.Windows.Forms.Label();
-            this.lstboxNavVisitRecord = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).BeginInit();
             this.grpboxEditVisitRecordManually.SuspendLayout();
             this.grpboxClientProfile.SuspendLayout();
@@ -123,7 +123,7 @@ namespace RiumSalon
             this.lblClientId.Location = new System.Drawing.Point(6, 21);
             this.lblClientId.Name = "lblClientId";
             this.lblClientId.Size = new System.Drawing.Size(56, 20);
-            this.lblClientId.TabIndex = 5;
+            this.lblClientId.TabIndex = 99;
             this.lblClientId.Text = "Client ID";
             // 
             // txtClientId
@@ -151,7 +151,7 @@ namespace RiumSalon
             this.lblName.Location = new System.Drawing.Point(6, 56);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(43, 20);
-            this.lblName.TabIndex = 7;
+            this.lblName.TabIndex = 99;
             this.lblName.Text = "Name";
             // 
             // lblPhone
@@ -162,7 +162,7 @@ namespace RiumSalon
             this.lblPhone.Location = new System.Drawing.Point(6, 91);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(45, 20);
-            this.lblPhone.TabIndex = 9;
+            this.lblPhone.TabIndex = 99;
             this.lblPhone.Text = "Phone";
             // 
             // txtEmail
@@ -181,7 +181,7 @@ namespace RiumSalon
             this.lblEmail.Location = new System.Drawing.Point(6, 125);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(45, 20);
-            this.lblEmail.TabIndex = 11;
+            this.lblEmail.TabIndex = 99;
             this.lblEmail.Text = "E-Mail";
             // 
             // picProfilePicture
@@ -206,7 +206,7 @@ namespace RiumSalon
             this.lblNotes.Location = new System.Drawing.Point(6, 160);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(41, 20);
-            this.lblNotes.TabIndex = 15;
+            this.lblNotes.TabIndex = 99;
             this.lblNotes.Text = "Notes";
             // 
             // rtxtNotes
@@ -225,7 +225,7 @@ namespace RiumSalon
             this.btnClearProfile.Location = new System.Drawing.Point(253, 226);
             this.btnClearProfile.Name = "btnClearProfile";
             this.btnClearProfile.Size = new System.Drawing.Size(80, 30);
-            this.btnClearProfile.TabIndex = 5;
+            this.btnClearProfile.TabIndex = 6;
             this.btnClearProfile.Text = "Clear";
             this.btnClearProfile.UseVisualStyleBackColor = true;
             this.btnClearProfile.Click += new System.EventHandler(this.btnClearProfile_Click);
@@ -237,7 +237,7 @@ namespace RiumSalon
             this.btnCancelProfile.Location = new System.Drawing.Point(425, 226);
             this.btnCancelProfile.Name = "btnCancelProfile";
             this.btnCancelProfile.Size = new System.Drawing.Size(80, 30);
-            this.btnCancelProfile.TabIndex = 7;
+            this.btnCancelProfile.TabIndex = 8;
             this.btnCancelProfile.Text = "Cancel";
             this.btnCancelProfile.UseVisualStyleBackColor = true;
             this.btnCancelProfile.Click += new System.EventHandler(this.btnCancelProfile_Click);
@@ -250,7 +250,7 @@ namespace RiumSalon
             this.btnDeleteProfile.Location = new System.Drawing.Point(339, 226);
             this.btnDeleteProfile.Name = "btnDeleteProfile";
             this.btnDeleteProfile.Size = new System.Drawing.Size(80, 30);
-            this.btnDeleteProfile.TabIndex = 8;
+            this.btnDeleteProfile.TabIndex = 7;
             this.btnDeleteProfile.Text = "Delete";
             this.btnDeleteProfile.UseVisualStyleBackColor = true;
             this.btnDeleteProfile.Click += new System.EventHandler(this.btnDeleteProfile_Click);
@@ -315,7 +315,7 @@ namespace RiumSalon
             this.txtTipsPercent.Location = new System.Drawing.Point(246, 99);
             this.txtTipsPercent.Name = "txtTipsPercent";
             this.txtTipsPercent.Size = new System.Drawing.Size(70, 25);
-            this.txtTipsPercent.TabIndex = 82;
+            this.txtTipsPercent.TabIndex = 3;
             // 
             // lblTipsDollar
             // 
@@ -325,7 +325,7 @@ namespace RiumSalon
             this.lblTipsDollar.Location = new System.Drawing.Point(322, 101);
             this.lblTipsDollar.Name = "lblTipsDollar";
             this.lblTipsDollar.Size = new System.Drawing.Size(49, 20);
-            this.lblTipsDollar.TabIndex = 81;
+            this.lblTipsDollar.TabIndex = 99;
             this.lblTipsDollar.Text = "Tips($)";
             // 
             // lblMessageVisitRecord
@@ -353,7 +353,7 @@ namespace RiumSalon
             this.cmbboxStatus.Location = new System.Drawing.Point(427, 159);
             this.cmbboxStatus.Name = "cmbboxStatus";
             this.cmbboxStatus.Size = new System.Drawing.Size(165, 28);
-            this.cmbboxStatus.TabIndex = 9;
+            this.cmbboxStatus.TabIndex = 10;
             // 
             // lblVisitRecordClientName
             // 
@@ -363,7 +363,7 @@ namespace RiumSalon
             this.lblVisitRecordClientName.Location = new System.Drawing.Point(322, 40);
             this.lblVisitRecordClientName.Name = "lblVisitRecordClientName";
             this.lblVisitRecordClientName.Size = new System.Drawing.Size(43, 20);
-            this.lblVisitRecordClientName.TabIndex = 77;
+            this.lblVisitRecordClientName.TabIndex = 99;
             this.lblVisitRecordClientName.Text = "Name";
             // 
             // txtVisitRecordClientName
@@ -382,7 +382,7 @@ namespace RiumSalon
             this.lblVisitRecordClientId.Location = new System.Drawing.Point(169, 39);
             this.lblVisitRecordClientId.Name = "lblVisitRecordClientId";
             this.lblVisitRecordClientId.Size = new System.Drawing.Size(56, 20);
-            this.lblVisitRecordClientId.TabIndex = 75;
+            this.lblVisitRecordClientId.TabIndex = 99;
             this.lblVisitRecordClientId.Text = "Client ID";
             // 
             // txtVisitRecordClientId
@@ -412,7 +412,7 @@ namespace RiumSalon
             this.btnCalculate.Location = new System.Drawing.Point(462, 128);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(130, 28);
-            this.btnCalculate.TabIndex = 5;
+            this.btnCalculate.TabIndex = 6;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
@@ -432,7 +432,7 @@ namespace RiumSalon
             this.cmbboxMethod.Location = new System.Drawing.Point(515, 97);
             this.cmbboxMethod.Name = "cmbboxMethod";
             this.cmbboxMethod.Size = new System.Drawing.Size(77, 28);
-            this.cmbboxMethod.TabIndex = 4;
+            this.cmbboxMethod.TabIndex = 5;
             // 
             // lblMethod
             // 
@@ -442,7 +442,7 @@ namespace RiumSalon
             this.lblMethod.Location = new System.Drawing.Point(458, 101);
             this.lblMethod.Name = "lblMethod";
             this.lblMethod.Size = new System.Drawing.Size(51, 20);
-            this.lblMethod.TabIndex = 70;
+            this.lblMethod.TabIndex = 99;
             this.lblMethod.Text = "Method";
             // 
             // lblTotal
@@ -453,7 +453,7 @@ namespace RiumSalon
             this.lblTotal.Location = new System.Drawing.Point(322, 132);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(53, 20);
-            this.lblTotal.TabIndex = 68;
+            this.lblTotal.TabIndex = 99;
             this.lblTotal.Text = "Total($)";
             // 
             // txtTotal
@@ -472,7 +472,7 @@ namespace RiumSalon
             this.lblTipsPercent.Location = new System.Drawing.Point(154, 101);
             this.lblTipsPercent.Name = "lblTipsPercent";
             this.lblTipsPercent.Size = new System.Drawing.Size(53, 20);
-            this.lblTipsPercent.TabIndex = 3;
+            this.lblTipsPercent.TabIndex = 99;
             this.lblTipsPercent.Text = "Tips(%)";
             // 
             // txtTipsDollar
@@ -481,7 +481,7 @@ namespace RiumSalon
             this.txtTipsDollar.Location = new System.Drawing.Point(382, 99);
             this.txtTipsDollar.Name = "txtTipsDollar";
             this.txtTipsDollar.Size = new System.Drawing.Size(70, 25);
-            this.txtTipsDollar.TabIndex = 3;
+            this.txtTipsDollar.TabIndex = 4;
             // 
             // lblQST
             // 
@@ -491,7 +491,7 @@ namespace RiumSalon
             this.lblQST.Location = new System.Drawing.Point(154, 132);
             this.lblQST.Name = "lblQST";
             this.lblQST.Size = new System.Drawing.Size(86, 20);
-            this.lblQST.TabIndex = 64;
+            this.lblQST.TabIndex = 99;
             this.lblQST.Text = "QST(9.975%)";
             // 
             // txtQST
@@ -510,7 +510,7 @@ namespace RiumSalon
             this.lblGST.Location = new System.Drawing.Point(7, 132);
             this.lblGST.Name = "lblGST";
             this.lblGST.Size = new System.Drawing.Size(62, 20);
-            this.lblGST.TabIndex = 62;
+            this.lblGST.TabIndex = 99;
             this.lblGST.Text = "GST(5%)";
             // 
             // txtGST
@@ -542,7 +542,7 @@ namespace RiumSalon
             this.lblSpecialRequest2.Location = new System.Drawing.Point(8, 215);
             this.lblSpecialRequest2.Name = "lblSpecialRequest2";
             this.lblSpecialRequest2.Size = new System.Drawing.Size(55, 20);
-            this.lblSpecialRequest2.TabIndex = 61;
+            this.lblSpecialRequest2.TabIndex = 99;
             this.lblSpecialRequest2.Text = "Request";
             // 
             // btnCancelVisitHistory
@@ -552,7 +552,7 @@ namespace RiumSalon
             this.btnCancelVisitHistory.Location = new System.Drawing.Point(429, 290);
             this.btnCancelVisitHistory.Name = "btnCancelVisitHistory";
             this.btnCancelVisitHistory.Size = new System.Drawing.Size(80, 30);
-            this.btnCancelVisitHistory.TabIndex = 13;
+            this.btnCancelVisitHistory.TabIndex = 15;
             this.btnCancelVisitHistory.Text = "Cancel";
             this.btnCancelVisitHistory.UseVisualStyleBackColor = true;
             this.btnCancelVisitHistory.Click += new System.EventHandler(this.btnCancelVisitHistory_Click);
@@ -563,7 +563,7 @@ namespace RiumSalon
             this.rtxtSpecialRequest.Location = new System.Drawing.Point(78, 192);
             this.rtxtSpecialRequest.Name = "rtxtSpecialRequest";
             this.rtxtSpecialRequest.Size = new System.Drawing.Size(514, 92);
-            this.rtxtSpecialRequest.TabIndex = 10;
+            this.rtxtSpecialRequest.TabIndex = 11;
             this.rtxtSpecialRequest.Text = "";
             // 
             // btnSaveVisitHistory
@@ -587,7 +587,7 @@ namespace RiumSalon
             this.lblSpecialRequest1.Location = new System.Drawing.Point(8, 194);
             this.lblSpecialRequest1.Name = "lblSpecialRequest1";
             this.lblSpecialRequest1.Size = new System.Drawing.Size(51, 20);
-            this.lblSpecialRequest1.TabIndex = 22;
+            this.lblSpecialRequest1.TabIndex = 99;
             this.lblSpecialRequest1.Text = "Special";
             // 
             // btnClearVisitHistory
@@ -597,7 +597,7 @@ namespace RiumSalon
             this.btnClearVisitHistory.Location = new System.Drawing.Point(257, 290);
             this.btnClearVisitHistory.Name = "btnClearVisitHistory";
             this.btnClearVisitHistory.Size = new System.Drawing.Size(80, 30);
-            this.btnClearVisitHistory.TabIndex = 11;
+            this.btnClearVisitHistory.TabIndex = 13;
             this.btnClearVisitHistory.Text = "Clear";
             this.btnClearVisitHistory.UseVisualStyleBackColor = true;
             this.btnClearVisitHistory.Click += new System.EventHandler(this.btnClearVisitHistory_Click);
@@ -611,7 +611,7 @@ namespace RiumSalon
             this.dtEnd.Name = "dtEnd";
             this.dtEnd.ShowUpDown = true;
             this.dtEnd.Size = new System.Drawing.Size(60, 25);
-            this.dtEnd.TabIndex = 8;
+            this.dtEnd.TabIndex = 9;
             // 
             // dtStart
             // 
@@ -622,7 +622,7 @@ namespace RiumSalon
             this.dtStart.Name = "dtStart";
             this.dtStart.ShowUpDown = true;
             this.dtStart.Size = new System.Drawing.Size(60, 25);
-            this.dtStart.TabIndex = 7;
+            this.dtStart.TabIndex = 8;
             // 
             // dtDate
             // 
@@ -632,7 +632,7 @@ namespace RiumSalon
             this.dtDate.Location = new System.Drawing.Point(78, 161);
             this.dtDate.Name = "dtDate";
             this.dtDate.Size = new System.Drawing.Size(85, 25);
-            this.dtDate.TabIndex = 6;
+            this.dtDate.TabIndex = 7;
             // 
             // lblStatus
             // 
@@ -642,7 +642,7 @@ namespace RiumSalon
             this.lblStatus.Location = new System.Drawing.Point(378, 163);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(43, 20);
-            this.lblStatus.TabIndex = 38;
+            this.lblStatus.TabIndex = 99;
             this.lblStatus.Text = "Status";
             // 
             // lblEnd
@@ -653,7 +653,7 @@ namespace RiumSalon
             this.lblEnd.Location = new System.Drawing.Point(275, 163);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(31, 20);
-            this.lblEnd.TabIndex = 36;
+            this.lblEnd.TabIndex = 99;
             this.lblEnd.Text = "End";
             // 
             // lblStart
@@ -664,7 +664,7 @@ namespace RiumSalon
             this.lblStart.Location = new System.Drawing.Point(169, 163);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(34, 20);
-            this.lblStart.TabIndex = 34;
+            this.lblStart.TabIndex = 99;
             this.lblStart.Text = "Start";
             // 
             // lblDate
@@ -672,10 +672,10 @@ namespace RiumSalon
             this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(7, 150);
+            this.lblDate.Location = new System.Drawing.Point(8, 165);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(35, 20);
-            this.lblDate.TabIndex = 32;
+            this.lblDate.TabIndex = 99;
             this.lblDate.Text = "Date";
             // 
             // lblWorker
@@ -686,7 +686,7 @@ namespace RiumSalon
             this.lblWorker.Location = new System.Drawing.Point(322, 70);
             this.lblWorker.Name = "lblWorker";
             this.lblWorker.Size = new System.Drawing.Size(48, 20);
-            this.lblWorker.TabIndex = 30;
+            this.lblWorker.TabIndex = 99;
             this.lblWorker.Text = "Worker";
             // 
             // lblPrice
@@ -697,7 +697,7 @@ namespace RiumSalon
             this.lblPrice.Location = new System.Drawing.Point(8, 101);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(53, 20);
-            this.lblPrice.TabIndex = 28;
+            this.lblPrice.TabIndex = 99;
             this.lblPrice.Text = "Price($)";
             // 
             // txtPrice
@@ -716,7 +716,7 @@ namespace RiumSalon
             this.lblService.Location = new System.Drawing.Point(7, 70);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(50, 20);
-            this.lblService.TabIndex = 26;
+            this.lblService.TabIndex = 99;
             this.lblService.Text = "Service";
             // 
             // txtService
@@ -735,7 +735,7 @@ namespace RiumSalon
             this.lblRecordId.Location = new System.Drawing.Point(7, 39);
             this.lblRecordId.Name = "lblRecordId";
             this.lblRecordId.Size = new System.Drawing.Size(65, 20);
-            this.lblRecordId.TabIndex = 22;
+            this.lblRecordId.TabIndex = 99;
             this.lblRecordId.Text = "Record ID";
             // 
             // txtRecordId
@@ -781,7 +781,7 @@ namespace RiumSalon
             this.btnSaveProfile.Location = new System.Drawing.Point(509, 226);
             this.btnSaveProfile.Name = "btnSaveProfile";
             this.btnSaveProfile.Size = new System.Drawing.Size(80, 30);
-            this.btnSaveProfile.TabIndex = 16;
+            this.btnSaveProfile.TabIndex = 5;
             this.btnSaveProfile.Text = "Save";
             this.btnSaveProfile.UseVisualStyleBackColor = true;
             // 
@@ -820,6 +820,17 @@ namespace RiumSalon
             this.grpboxViewVisitRecord.TabIndex = 62;
             this.grpboxViewVisitRecord.TabStop = false;
             this.grpboxViewVisitRecord.Text = "View Visit Record";
+            // 
+            // lstboxNavVisitRecord
+            // 
+            this.lstboxNavVisitRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstboxNavVisitRecord.FormattingEnabled = true;
+            this.lstboxNavVisitRecord.ItemHeight = 20;
+            this.lstboxNavVisitRecord.Location = new System.Drawing.Point(3, 21);
+            this.lstboxNavVisitRecord.Name = "lstboxNavVisitRecord";
+            this.lstboxNavVisitRecord.Size = new System.Drawing.Size(168, 299);
+            this.lstboxNavVisitRecord.TabIndex = 1;
+            this.lstboxNavVisitRecord.SelectedIndexChanged += new System.EventHandler(this.lstboxNavVisitRecord_SelectedIndexChanged);
             // 
             // lblCopyright
             // 
@@ -885,17 +896,6 @@ namespace RiumSalon
             this.lblMessageProfile.TabIndex = 64;
             this.lblMessageProfile.Text = "...";
             this.lblMessageProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lstboxNavVisitRecord
-            // 
-            this.lstboxNavVisitRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstboxNavVisitRecord.FormattingEnabled = true;
-            this.lstboxNavVisitRecord.ItemHeight = 20;
-            this.lstboxNavVisitRecord.Location = new System.Drawing.Point(3, 21);
-            this.lstboxNavVisitRecord.Name = "lstboxNavVisitRecord";
-            this.lstboxNavVisitRecord.Size = new System.Drawing.Size(168, 299);
-            this.lstboxNavVisitRecord.TabIndex = 1;
-            this.lstboxNavVisitRecord.SelectedIndexChanged += new System.EventHandler(this.lstboxNavVisitRecord_SelectedIndexChanged);
             // 
             // ClientDBManagement
             // 

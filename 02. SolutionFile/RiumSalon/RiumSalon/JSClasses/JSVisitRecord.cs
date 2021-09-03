@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace RiumSalon.JSClasses
@@ -132,8 +133,10 @@ namespace RiumSalon.JSClasses
                     while (!reader.EndOfStream)
                     {
                         string record = reader.ReadLine();
+                        int startIndex = record.IndexOf('\t') + 1;
+                        int endIndex = record.IndexOf('\t', record.IndexOf('\t') + 1);
 
-                        if (record.Substring(record.IndexOf('\t') + 1).StartsWith(clientId.ToString()))
+                        if (record.Substring(startIndex, endIndex - startIndex) == clientId.ToString())
                         {
                             jSVisitRecords.Add(JSParse(record));
                         }
