@@ -332,7 +332,7 @@ namespace RiumSalon
             this.cmbboxService.Location = new System.Drawing.Point(78, 66);
             this.cmbboxService.Name = "cmbboxService";
             this.cmbboxService.Size = new System.Drawing.Size(238, 28);
-            this.cmbboxService.TabIndex = 100;
+            this.cmbboxService.TabIndex = 0;
             this.cmbboxService.SelectedIndexChanged += new System.EventHandler(this.cmbboxService_SelectedIndexChanged);
             // 
             // cmbboxTipsPercent

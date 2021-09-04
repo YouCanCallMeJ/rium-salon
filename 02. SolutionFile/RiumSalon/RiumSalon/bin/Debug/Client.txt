@@ -127,3 +127,9 @@
 127	Serena	5148023881	Serena.lee@live.ca	
 128	Kate	5145460328		
 129	SeHoon Hong	5142249787		
+130	Sung Yeon Hwang	4389242335	syeoni69@gmail.com	
+131	Sarah Hwang	5145492350		
+132	Isabella Kalarickal	9737673995	isabella.kalarickal@gmail.com	
+133	Jonathan Ong	7173413413	jcong9@gmail.com	
+134	Coco	5146605166		
+135	Lisa Zhu	4387226803	lisazhu487@gmail.com	

@@ -144,6 +144,7 @@ namespace RiumSalon
                     client.JSAdd(client);
                     RebuildClientList(client.ClientId);
                     lblMessageProfile.Text = $"The record with Name '{client.ClientName}' is added.\n";
+                    btnClearVisitHistory_Click(sender, e);
                 }
                 else
                 {
