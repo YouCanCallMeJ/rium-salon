@@ -178,3 +178,9 @@
 -179	162	Greyson He	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-31 12:00:00 AM	16:00	16:40	pending	I might need a perm? Not sure at this point.
 -180	163	Francis Roberge	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-09-01 12:00:00 AM	11:20	12:00	pending	
 -181	164	Carmen Kwan	Women's Color	Marie	170	25.5	VISA	8.5	16.96	220.96	2021-09-04 12:00:00 AM	10:00	13:00	pending	I would like to get a haircut too if possible.
+-182	165	laurie-anne jones	Women's Blowdry & Styling	Marie	40	6	VISA	2	3.99	51.99	2021-09-02 12:00:00 AM	18:40	19:20	confirmed	
+-183	166	Ben David	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-09-02 12:00:00 AM	14:40	15:20	confirmed	
+-184	167	Marie Martin	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-09-02 12:00:00 AM	15:00	16:00	pending	
+-185	168	Tom Martin	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-09-02 12:00:00 AM	15:20	16:00	pending	
+-186	169	Harry Li	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-09-02 12:00:00 AM	16:40	17:20	canceled	
+-187	170	Myra	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-09-02 12:00:00 AM	16:00	17:00	pending	
