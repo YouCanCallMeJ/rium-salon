@@ -557,6 +557,7 @@ namespace RiumSalon
         private void cmbboxService_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtPrice.Text = JSUtility.returnServiceFee(cmbboxService.Text);
+            cmbboxWorker.Text = JSUtility.returnWorker(cmbboxService.Text);
         }
 
         private void txtTipsDollar_TextChanged(object sender, EventArgs e)

@@ -305,7 +305,7 @@ namespace RiumSalon
             this.grpboxEditVisitRecordManually.Location = new System.Drawing.Point(183, 335);
             this.grpboxEditVisitRecordManually.Name = "grpboxEditVisitRecordManually";
             this.grpboxEditVisitRecordManually.Size = new System.Drawing.Size(598, 323);
-            this.grpboxEditVisitRecordManually.TabIndex = 22;
+            this.grpboxEditVisitRecordManually.TabIndex = 1;
             this.grpboxEditVisitRecordManually.TabStop = false;
             this.grpboxEditVisitRecordManually.Text = "Edit Visit Record Manually";
             // 
@@ -795,7 +795,7 @@ namespace RiumSalon
             this.grpboxClientProfile.Location = new System.Drawing.Point(183, 67);
             this.grpboxClientProfile.Name = "grpboxClientProfile";
             this.grpboxClientProfile.Size = new System.Drawing.Size(598, 262);
-            this.grpboxClientProfile.TabIndex = 23;
+            this.grpboxClientProfile.TabIndex = 0;
             this.grpboxClientProfile.TabStop = false;
             this.grpboxClientProfile.Text = "Client Profile";
             // 
@@ -916,7 +916,7 @@ namespace RiumSalon
             this.lblMessageProfile.AutoSize = true;
             this.lblMessageProfile.Font = new System.Drawing.Font("Arial Narrow", 10F);
             this.lblMessageProfile.ForeColor = System.Drawing.Color.Red;
-            this.lblMessageProfile.Location = new System.Drawing.Point(502, 35);
+            this.lblMessageProfile.Location = new System.Drawing.Point(277, 35);
             this.lblMessageProfile.Name = "lblMessageProfile";
             this.lblMessageProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblMessageProfile.Size = new System.Drawing.Size(17, 17);

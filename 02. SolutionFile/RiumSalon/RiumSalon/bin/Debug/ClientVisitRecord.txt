@@ -144,3 +144,37 @@
 -145	133	Jonathan Ong	Men's Perm	Daniel	140	21	VISA	7	13.96	181.96	2021-08-24 12:00:00 AM	14:00	16:00	pending	
 -146	134	Coco	Women's Haircut	Daniel	50	7.5	VISA	2.5	4.99	64.99	2021-08-25 12:00:00 AM	15:00	16:00	confirmed	
 -147	135	Lisa Zhu	Women's Haircut	Daniel	50	7.5	VISA	2.5	4.99	64.99	2021-08-25 12:00:00 AM	17:00	18:00	pending	
+-148	136	Karist Ng	Men's Haircut	Daniel	30	3	VISA	1.5	2.99	37.49	2021-08-28 12:00:00 AM	16:40	17:20	confirmed	
+-149	137	josh kim	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-25 12:00:00 AM	18:00	18:40	pending	
+-150	138	Stella Wu	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-08-26 12:00:00 AM	11:00	12:00	confirmed	If possible, I would also like to dye my hair to a dark ash color after the haircut. Thank you!
+-151	139	Genevieve	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-08-24 12:00:00 AM	17:00	18:00	canceled	
+-152	140	Dimitri	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-26 12:00:00 AM	16:00	16:40	confirmed	
+-153	141	Eunchong	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-08-26 12:00:00 AM	18:00	19:00	confirmed	
+-154	142	Quentin Rouch	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-24 12:00:00 AM	17:20	18:00	confirmed	I not have a special request but I see all the website in English and I speak french :) if Daniel speaks French would be better for us :) Thanks !!
+-155	136	Karist Ng	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-27 12:00:00 AM	16:40	17:20	confirmed	
+-156	143	Apikalya Wangwongcharoen	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-08-26 12:00:00 AM	13:00	14:00	canceled	
+-157	144	Wendy Wang	Women's Haircut	Daniel	50	7.5	VISA	2.5	4.99	64.99	2021-08-25 12:00:00 AM	11:00	12:00	pending	
+-158	145	Insung	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-25 12:00:00 AM	14:40	15:20	canceled	
+-159	146	Thavy KHAMTAN	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-25 12:00:00 AM	10:40	11:20	canceled	
+-160	147	Ariana Varvaro	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-08-25 12:00:00 AM	13:00	14:00	canceled	
+-161	19	FRANCIS ROBERGE	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-25 12:00:00 AM	16:00	16:40	pending	
+-162	148	Yue Jiao	Women's Balayage, Hightlights, Ombre & Color with Design	Marie	300	45	VISA	15	29.92	389.92	2021-08-28 12:00:00 AM	14:00	18:00	confirmed	last 1/4 of my hair still has brown dye on it from a year ago.
+-163	149	steven lee	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-26 12:00:00 AM	18:40	19:20	canceled	
+-164	150	Iris Guo	Women's Color	Marie	170	25.5	VISA	8.5	16.96	220.96	2021-08-28 12:00:00 AM	10:00	13:00	pending	
+-165	151	Hongju Yoon	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-08-28 12:00:00 AM	13:00	14:00	confirmed	
+-166	152	Alexander Cui	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-26 12:00:00 AM	14:40	15:20	pending	
+-167	153	Meiting Chen	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-08-27 12:00:00 AM	11:00	12:00	pending	May also need to dye my hair a bit!
+-168	154	Alexandra Li	Women's Color	Marie	170	25.5	VISA	8.5	16.96	220.96	2021-08-29 12:00:00 AM	10:00	13:00	confirmed	I would like a purple peakaboo hairstyle.
+-169	155	Mariam Hegazy	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-08-27 12:00:00 AM	16:00	17:00	canceled	
+-170	156	JoAnn Lee	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-08-27 12:00:00 AM	14:00	15:00	canceled	
+-171	157	Raymond Wong	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-09-01 12:00:00 AM	10:00	10:40	confirmed	
+-172	68	Sungtae Kim	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-31 12:00:00 AM	18:00	18:40	confirmed	
+-173	82	Yuni choi	Men's Perm	Daniel	140	21	VISA	7	13.96	181.96	2021-08-29 12:00:00 AM	14:00	16:00	pending	Hi, its my first time doing a perm and I dont really know what kind of hair style I would like... if possible to suggest a hair style with my current hair that i have. Thank you in advance.
+-174	158	Q. Tony Nguyen	Men's Sidedown-Perm	Daniel	50	7.5	VISA	2.5	4.99	64.99	2021-08-29 12:00:00 AM	16:00	17:00	canceled	I'm not sure if I want to do a regular haircut or a side down perm, but I'm interested.
+-175	159	Julien Nguyen	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-29 12:00:00 AM	16:00	16:40	pending	
+-176	63	Karina Wang	Women's Haircut	Marie	50	7.5	VISA	2.5	4.99	64.99	2021-09-04 12:00:00 AM	15:00	16:00	confirmed	
+-177	160	Kevin	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-09-04 12:00:00 AM	14:40	15:20	confirmed	
+-178	161	Selly Park	Women's Bang Cut	Marie	10	1.5	VISA	0.5	1	13	2021-08-31 12:00:00 AM	18:30	19:00	confirmed	
+-179	162	Greyson He	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-08-31 12:00:00 AM	16:00	16:40	pending	I might need a perm? Not sure at this point.
+-180	163	Francis Roberge	Men's Haircut	Daniel	30	4.5	VISA	1.5	2.99	38.99	2021-09-01 12:00:00 AM	11:20	12:00	pending	
+-181	164	Carmen Kwan	Women's Color	Marie	170	25.5	VISA	8.5	16.96	220.96	2021-09-04 12:00:00 AM	10:00	13:00	pending	I would like to get a haircut too if possible.
